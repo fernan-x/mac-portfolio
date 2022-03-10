@@ -84,16 +84,6 @@
         object-fit: cover;
         transition: 0.2s;
       }
-      .ico-bin {
-        width: 94% !important;
-        height: 94% !important;
-        object-fit: cover;
-        transition: 0.2s;
-
-        &:hover {
-          margin-left: 10px;
-        }
-      }
     }
   }
 }

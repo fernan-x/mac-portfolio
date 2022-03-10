@@ -94,6 +94,17 @@ const applications = [
     img: images.finder,
     open: false,
     active: false,
+    docked: true,
+    height: 400,
+    width: 600,
+  },
+  {
+    id: "launchpad",
+    name: "LaunchPad",
+    img: images.launchpad,
+    open: false,
+    active: false,
+    docked: true, // TODO : modify launchpad working
     height: 400,
     width: 600,
   },
@@ -103,8 +114,30 @@ const applications = [
     img: images.settings,
     open: false,
     active: false,
+    docked: true,
     height: 500,
     width: 500,
+  },
+  {
+    id: "notes",
+    name: "Notes",
+    img: images.notes,
+    open: true,
+    active: true,
+    docked: true,
+    height: 500, // TODO : How to manage full screen
+    width: 800,
+  },
+  {
+    id: "bin",
+    name: "Bin",
+    img: "https://findicons.com/files/icons/569/longhorn_objects/128/trash.png", // TODO : put this icon to local
+    open: false,
+    active: false,
+    docked: true,
+    height: 400,
+    width: 600,
+    last: true,
   },
 ];
 

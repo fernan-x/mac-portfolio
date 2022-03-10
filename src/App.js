@@ -66,7 +66,7 @@ function App() {
             height={item.height}
             open
             key={item.id}
-          />
+          ></Window>
         ))}
       <Dock openApplication={openApplication} />
     </div>

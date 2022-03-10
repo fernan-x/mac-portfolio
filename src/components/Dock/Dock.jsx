@@ -3,15 +3,7 @@ import "./Dock.scss";
 import constants from "../../constants/constants.js";
 
 // TODO : how to handle remove active
-const DockEntry = ({
-  id,
-  index,
-  name,
-  img,
-  classes,
-  last,
-  openApplication,
-}) => {
+const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
   const resize = (e, idx) => {
     let icons = document.querySelectorAll(".ico");
     const elem = e.target;
@@ -26,11 +18,15 @@ const DockEntry = ({
       elem.style.transform = "scale(1.5)  translateY(-10px)";
     } else {
       elem.style.transform = "scale(1.5)  translateY(-10px)";
-      icons[previous].style.transform = "scale(1.2) translateY(-6px)";
+      if (icons[previous]) {
+        icons[previous].style.transform = "scale(1.2) translateY(-6px)";
+      }
       if (icons[previous1]) {
         icons[previous1].style.transform = "scale(1.1)";
       }
-      icons[next].style.transform = "scale(1.2) translateY(-6px)";
+      if (icons[next]) {
+        icons[next].style.transform = "scale(1.2) translateY(-6px)";
+      }
       if (icons[next2]) {
         icons[next2].style.transform = "scale(1.1)";
       }
@@ -40,7 +36,7 @@ const DockEntry = ({
   const reset = () => {
     let icons = document.querySelectorAll(".ico");
     icons.forEach((item) => {
-      item.style.transform = "scale(1)  translateY(0px)";
+      item.style.transform = "scale(1) translateY(0px)";
     });
   };
 
@@ -62,14 +58,19 @@ const DockEntry = ({
   };
 
   return (
-    <li className={`li-${index} ${last ? "li-bin" : ""}`} onClick={setActive}>
+    <li
+      className={`li-${index} ${last ? "li-bin" : ""} ${
+        active ? "active" : ""
+      }`}
+      onClick={setActive}
+    >
       <div className="name">{name}</div>
       <img
         src={img}
         alt={name}
         onMouseOver={(e) => resize(e, index - 1)}
         onMouseLeave={reset}
-        className={classes}
+        className="ico"
       />
     </li>
   );
@@ -79,18 +80,21 @@ const Dock = ({ openApplication }) => {
   return (
     <div className="dock">
       <div className="dock-container">
-        {constants.dockEntries.map((entry, idx) => (
-          <DockEntry
-            id={entry.id}
-            name={entry.name}
-            img={entry.img}
-            key={idx + 1}
-            index={idx + 1}
-            classes={entry.classes}
-            last={entry.last}
-            openApplication={openApplication}
-          />
-        ))}
+        {constants.applications.map(
+          (entry, idx) =>
+            entry.docked && (
+              <DockEntry
+                id={entry.id}
+                name={entry.name}
+                img={entry.img}
+                key={idx + 1}
+                index={idx + 1}
+                last={entry.last}
+                active={entry.active}
+                openApplication={openApplication}
+              />
+            )
+        )}
       </div>
     </div>
   );
