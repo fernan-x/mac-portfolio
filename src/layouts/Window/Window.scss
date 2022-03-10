@@ -23,6 +23,26 @@
   padding: 0.2rem;
 }
 
+.window__header-title {
+  position: absolute;
+  height: 25px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  pointer-events: none;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.004em;
+  color: $color-light-primary;
+}
+
 .window__header-buttons {
   button {
     margin: 0.2rem;

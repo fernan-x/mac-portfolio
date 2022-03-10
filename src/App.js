@@ -60,7 +60,13 @@ function App() {
       <MenuBar />
       {openedApp &&
         openedApp.map((item) => (
-          <Window width={item.width} height={item.height} open key={item.id} />
+          <Window
+            name={item.name}
+            width={item.width}
+            height={item.height}
+            open
+            key={item.id}
+          />
         ))}
       <Dock openApplication={openApplication} />
     </div>
