@@ -87,8 +87,30 @@ const dockEntries = [
   },
 ];
 
+const applications = [
+  {
+    id: "finder",
+    name: "Finder",
+    img: images.finder,
+    open: false,
+    active: false,
+    height: 400,
+    width: 600,
+  },
+  {
+    id: "settings",
+    name: "Settings",
+    img: images.settings,
+    open: false,
+    active: false,
+    height: 500,
+    width: 500,
+  },
+];
+
 const exportedConstants = {
   dockEntries,
+  applications,
 };
 
 export default exportedConstants;

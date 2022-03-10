@@ -2,7 +2,16 @@ import React from "react";
 import "./Dock.scss";
 import constants from "../../constants/constants.js";
 
-const DockEntry = ({ id, index, name, img, classes, last }) => {
+// TODO : how to handle remove active
+const DockEntry = ({
+  id,
+  index,
+  name,
+  img,
+  classes,
+  last,
+  openApplication,
+}) => {
   const resize = (e, idx) => {
     let icons = document.querySelectorAll(".ico");
     const elem = e.target;
@@ -40,11 +49,15 @@ const DockEntry = ({ id, index, name, img, classes, last }) => {
     if (elem.nodeName === "IMG") {
       elem = elem.parentNode;
     }
-    elem.classList.add("active");
 
-    // TODO : launch App
-    if (id) {
-      console.log("Launch " + id + " app");
+    // Do not re open opened app
+    if (!elem.classList.contains("active")) {
+      elem.classList.add("active");
+      // Launch app
+      if (id) {
+        console.log("Launch " + id + " app");
+        openApplication(id);
+      }
     }
   };
 
@@ -62,7 +75,7 @@ const DockEntry = ({ id, index, name, img, classes, last }) => {
   );
 };
 
-const Dock = () => {
+const Dock = ({ openApplication }) => {
   return (
     <div className="dock">
       <div className="dock-container">
@@ -75,6 +88,7 @@ const Dock = () => {
             index={idx + 1}
             classes={entry.classes}
             last={entry.last}
+            openApplication={openApplication}
           />
         ))}
       </div>
