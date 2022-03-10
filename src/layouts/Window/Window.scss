@@ -1,0 +1,50 @@
+@import "../../assets/styles/colors";
+
+.window {
+  background-color: $color-light-background;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+
+  &.closed {
+    display: none;
+  }
+}
+
+.window__header {
+  height: 25px;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.15),
+    inset 0px -0.5px 0px rgba(0, 0, 0, 0.05);
+  padding: 0.2rem;
+}
+
+.window__header-buttons {
+  button {
+    margin: 0.2rem;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    border: none;
+
+    &.close {
+      background-color: $color-light-red;
+    }
+  }
+}
+
+.window__content {
+  background-color: $color-light-background-inactive;
+  flex-grow: 1;
+}
+
+.window__footer {
+  height: 28px;
+  background-color: $color-light-background-inactive;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

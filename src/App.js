@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import Dock from "./components/Dock/Dock";
+import Window from "./layouts/Window/Window";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Window width={600} height={400} open />
+      {/* <Window width={400} height={300} open /> */}
+      <Dock />
     </div>
   );
 }
