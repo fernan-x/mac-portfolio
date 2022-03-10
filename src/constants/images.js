@@ -13,8 +13,10 @@ import safari from "../assets/images/safari.png";
 import siri from "../assets/images/siri.png";
 import trash from "../assets/images/trash.png";
 import tv from "../assets/images/tv.png";
+import settings from "../assets/images/settings.png";
 
 const exportedImages = {
+  settings,
   appstore,
   contacts,
   facetime,

@@ -2,18 +2,26 @@ import images from "./images";
 
 const dockEntries = [
   {
+    id: "finder",
     name: "Finder",
     img: images.finder,
     classes: "ico",
   },
   {
-    name: "Siri",
-    img: images.siri,
+    id: "launchpad",
+    name: "LaunchPad",
+    img: images.launchpad,
     classes: "ico",
   },
   {
-    name: "LaunchPad",
-    img: images.launchpad,
+    id: "settings",
+    name: "Settings",
+    img: images.settings,
+    classes: "ico",
+  },
+  {
+    name: "Siri",
+    img: images.siri,
     classes: "ico",
   },
   {

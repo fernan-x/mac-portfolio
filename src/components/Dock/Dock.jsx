@@ -2,7 +2,7 @@ import React from "react";
 import "./Dock.scss";
 import constants from "../../constants/constants.js";
 
-const DockEntry = ({ index, name, img, classes, last }) => {
+const DockEntry = ({ id, index, name, img, classes, last }) => {
   const resize = (e, idx) => {
     let icons = document.querySelectorAll(".ico");
     const elem = e.target;
@@ -35,8 +35,21 @@ const DockEntry = ({ index, name, img, classes, last }) => {
     });
   };
 
+  const setActive = (e) => {
+    let elem = e.target;
+    if (elem.nodeName === "IMG") {
+      elem = elem.parentNode;
+    }
+    elem.classList.add("active");
+
+    // TODO : launch App
+    if (id) {
+      console.log("Launch " + id + " app");
+    }
+  };
+
   return (
-    <li className={`li-${index} ${last ? "li-bin" : ""}`}>
+    <li className={`li-${index} ${last ? "li-bin" : ""}`} onClick={setActive}>
       <div className="name">{name}</div>
       <img
         src={img}
@@ -110,6 +123,7 @@ const Dock = () => {
         <div className="dock-container">
           {constants.dockEntries.map((entry, idx) => (
             <DockEntry
+              id={entry.id}
               name={entry.name}
               img={entry.img}
               key={idx + 1}
