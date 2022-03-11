@@ -14,6 +14,11 @@ import siri from "../assets/images/siri.png";
 import trash from "../assets/images/trash.png";
 import tv from "../assets/images/tv.png";
 import settings from "../assets/images/settings.png";
+import apple from "../assets/images/apple.png";
+import wifi from "../assets/images/wifi.png";
+import search from "../assets/images/search.png";
+import controlcenter from "../assets/images/control-center.png";
+import battery from "../assets/images/battery.png";
 
 const exportedImages = {
   settings,
@@ -32,6 +37,11 @@ const exportedImages = {
   siri,
   trash,
   tv,
+  apple,
+  wifi,
+  search,
+  controlcenter,
+  battery,
 };
 
 export default exportedImages;

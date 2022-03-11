@@ -2,7 +2,8 @@ import React from "react";
 import "./Dock.scss";
 import constants from "../../constants/constants.js";
 
-const DockEntry = ({ id, index, name, img, classes, last }) => {
+// TODO : how to handle remove active
+const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
   const resize = (e, idx) => {
     let icons = document.querySelectorAll(".ico");
     const elem = e.target;
@@ -17,11 +18,15 @@ const DockEntry = ({ id, index, name, img, classes, last }) => {
       elem.style.transform = "scale(1.5)  translateY(-10px)";
     } else {
       elem.style.transform = "scale(1.5)  translateY(-10px)";
-      icons[previous].style.transform = "scale(1.2) translateY(-6px)";
+      if (icons[previous]) {
+        icons[previous].style.transform = "scale(1.2) translateY(-6px)";
+      }
       if (icons[previous1]) {
         icons[previous1].style.transform = "scale(1.1)";
       }
-      icons[next].style.transform = "scale(1.2) translateY(-6px)";
+      if (icons[next]) {
+        icons[next].style.transform = "scale(1.2) translateY(-6px)";
+      }
       if (icons[next2]) {
         icons[next2].style.transform = "scale(1.1)";
       }
@@ -31,7 +36,7 @@ const DockEntry = ({ id, index, name, img, classes, last }) => {
   const reset = () => {
     let icons = document.querySelectorAll(".ico");
     icons.forEach((item) => {
-      item.style.transform = "scale(1)  translateY(0px)";
+      item.style.transform = "scale(1) translateY(0px)";
     });
   };
 
@@ -40,101 +45,58 @@ const DockEntry = ({ id, index, name, img, classes, last }) => {
     if (elem.nodeName === "IMG") {
       elem = elem.parentNode;
     }
-    elem.classList.add("active");
 
-    // TODO : launch App
-    if (id) {
-      console.log("Launch " + id + " app");
+    // Do not re open opened app
+    if (!elem.classList.contains("active")) {
+      elem.classList.add("active");
+      // Launch app
+      if (id) {
+        console.log("Launch " + id + " app");
+        openApplication(id);
+      }
     }
   };
 
   return (
-    <li className={`li-${index} ${last ? "li-bin" : ""}`} onClick={setActive}>
+    <li
+      className={`li-${index} ${last ? "li-bin" : ""} ${
+        active ? "active" : ""
+      }`}
+      onClick={setActive}
+    >
       <div className="name">{name}</div>
       <img
         src={img}
         alt={name}
         onMouseOver={(e) => resize(e, index - 1)}
         onMouseLeave={reset}
-        className={classes}
+        className="ico"
       />
     </li>
   );
 };
 
-const Dock = () => {
+const Dock = ({ openApplication }) => {
   return (
-    <>
-      <div className="menu-bar">
-        <div className="left">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/1010px-Apple_logo_white.svg.png"
-            className="apple-logo"
-            alt=""
-          />
-          <span className="menus active">Finder</span>
-          <span className="menus">File</span>
-          <span className="menus">Edit</span>
-          <span className="menus">View</span>
-          <span className="menus">Go</span>
-          <span className="menus">Window</span>
-          <span className="menus">Help</span>
-        </div>
-        <div className="right">
-          <div className="menu-ico">
-            <img
-              src="https://freepngimg.com/download/united_states/76187-sound-information-united-business-states-address-email.png"
-              alt=""
-              className="vol"
-            />
-          </div>
-          <div className="menu-ico">
-            <i className="fab fa-bluetooth-b"></i>
-          </div>
-          <div className="menu-ico">
-            <i className="fas fa-battery-half"></i>
-          </div>
-          <div className="menu-ico">
-            <i className="fas fa-wifi"></i>
-          </div>
-          <div className="menu-ico">
-            <i className="fas fa-search"></i>
-          </div>
-          <div className="menu-ico">
-            <img
-              src="https://eshop.macsales.com/blog/wp-content/uploads/2021/03/control-center-icon.png"
-              alt=""
-              className="control-center"
-            />
-          </div>
-          <div className="menu-ico">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/8/8e/AppleSiriIcon2017.png"
-              alt=""
-              className="siri"
-            />
-          </div>
-
-          <div className="menu-time">Mon 31 May 05:30</div>
-        </div>
+    <div className="dock">
+      <div className="dock-container">
+        {constants.applications.map(
+          (entry, idx) =>
+            entry.docked && (
+              <DockEntry
+                id={entry.id}
+                name={entry.name}
+                img={entry.img}
+                key={idx + 1}
+                index={idx + 1}
+                last={entry.last}
+                active={entry.active}
+                openApplication={openApplication}
+              />
+            )
+        )}
       </div>
-
-      <div className="dock">
-        <div className="dock-container">
-          {constants.dockEntries.map((entry, idx) => (
-            <DockEntry
-              id={entry.id}
-              name={entry.name}
-              img={entry.img}
-              key={idx + 1}
-              index={idx + 1}
-              classes={entry.classes}
-              last={entry.last}
-            />
-          ))}
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 
