@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MenuBar.scss";
 import images from "../../constants/images";
+import moment from "moment";
 
 const MenuBar = () => {
+  const [date, setDate] = useState(null);
+  const dateFormat = "ddd D MMMM h:mm a";
+
+  useEffect(() => {
+    setDate(moment().format(dateFormat));
+
+    const interval = setInterval(() => {
+      setDate(moment().format(dateFormat));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="menu-bar">
       <div className="left">
@@ -31,7 +44,7 @@ const MenuBar = () => {
           <img src={images.wifi} alt="Wifi" />
         </div>
 
-        <div className="menu-time">Mon 31 May 05:30</div>
+        <div className="menu-time">{date}</div>
       </div>
     </div>
   );
