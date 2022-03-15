@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cfdb4ee0-849c-4154-b6c7-bf97b3db6403/deploy-status)](https://app.netlify.com/sites/gracious-kilby-08419b/deploys)
+
+Site available at [https://fabien.fernandesalves.fr/](https://fabien.fernandesalves.fr/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
