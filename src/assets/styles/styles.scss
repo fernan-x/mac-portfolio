@@ -19,7 +19,9 @@ body {
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
 }
 
-body {
-  background: url("../../assets/images/light-colorful.jpeg") no-repeat
-    center/100%;
+body .desktop-app {
+  background: url("../../assets/images/light-colorful.jpeg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }

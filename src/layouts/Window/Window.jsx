@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Draggable from "react-draggable";
+import { Rnd } from "react-rnd";
 import "./Window.scss";
 
 const Window = ({ name, width, height, open, footer, children }) => {
@@ -15,11 +15,18 @@ const Window = ({ name, width, height, open, footer, children }) => {
   };
 
   return (
-    <Draggable defaultPosition={centerPos} handle=".window__header">
-      <div
-        className={`window ${!isOpen ? "closed" : ""}`}
-        style={{ width: width, height: height }}
-      >
+    <Rnd
+      default={{
+        x: centerPos.x,
+        y: centerPos.y,
+        width,
+        height,
+      }}
+      dragHandleClassName="window__header"
+      resizeHandleClasses="window"
+      bounds="parent"
+    >
+      <div className={`window${!isOpen ? " closed" : ""}`}>
         <div className="window__header">
           <div className="window__header-buttons">
             <button className="close" onClick={closeWindow}></button>
@@ -31,7 +38,7 @@ const Window = ({ name, width, height, open, footer, children }) => {
         <div className="window__content">{children}</div>
         <div className="window__footer">{footer}</div>
       </div>
-    </Draggable>
+    </Rnd>
   );
 };
 
