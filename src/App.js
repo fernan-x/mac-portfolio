@@ -1,12 +1,24 @@
 import { useEffect, useState } from "react";
-import Dock from "./components/Dock/Dock";
-import MenuBar from "./components/MenuBar/MenuBar";
-import Window from "./layouts/Window/Window";
 
 import constants from "./constants/constants";
+import SmartphoneApp from "./SmartphoneApp";
+import DesktopApp from "./DesktopApp";
 
 function App() {
+  const [width, setWidth] = useState(window.innerWidth);
   const [openedApp, setOpenedApp] = useState(null);
+  const isMobile = width <= 768;
+
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
 
   useEffect(() => {
     let newApp = [];
@@ -57,18 +69,11 @@ function App() {
 
   return (
     <div className="App">
-      <MenuBar />
-      {openedApp &&
-        openedApp.map((item) => (
-          <Window
-            name={item.name}
-            width={item.width}
-            height={item.height}
-            open
-            key={item.id}
-          ></Window>
-        ))}
-      <Dock openApplication={openApplication} />
+      {isMobile ? (
+        <SmartphoneApp />
+      ) : (
+        <DesktopApp openApplication={openApplication} openedApp={openedApp} />
+      )}
     </div>
   );
 }

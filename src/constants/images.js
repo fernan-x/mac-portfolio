@@ -19,8 +19,25 @@ import wifi from "../assets/images/wifi.png";
 import search from "../assets/images/search.png";
 import controlcenter from "../assets/images/control-center.png";
 import battery from "../assets/images/battery.png";
+import sWallpaper from "../assets/images/smartphone/wallpaper.png";
+import sLock from "../assets/images/smartphone/lock.png";
+import sBattery from "../assets/images/smartphone/battery.png";
+import sCamera from "../assets/images/smartphone/camera.png";
+import sFlashlight from "../assets/images/smartphone/flashlight.png";
+import sWifi from "../assets/images/smartphone/wifi.png";
+import sSignal from "../assets/images/smartphone/signal.png";
 
-const exportedImages = {
+export const smartphoneImages = {
+  wallpaper: sWallpaper,
+  lock: sLock,
+  battery: sBattery,
+  camera: sCamera,
+  flashlight: sFlashlight,
+  wifi: sWifi,
+  signal: sSignal,
+};
+
+export const desktopImages = {
   settings,
   appstore,
   contacts,
@@ -43,5 +60,7 @@ const exportedImages = {
   controlcenter,
   battery,
 };
+
+const exportedImages = { ...smartphoneImages, ...desktopImages };
 
 export default exportedImages;
