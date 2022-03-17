@@ -1,6 +1,11 @@
-*,
+* {
+  font-family: "San Francisco";
+}
+
 html,
-body {
+body,
+#root,
+.App {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -19,9 +24,20 @@ body {
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 body .desktop-app {
   background: url("../../assets/images/light-colorful.jpeg") no-repeat center;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+}
+
+body .smartphone-app.locked {
+  background: url("../../assets/images/smartphone/wallpaper.png") no-repeat
+    center;
+  background-size: cover;
+  height: 100%;
 }

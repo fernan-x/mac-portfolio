@@ -1,0 +1,32 @@
+.statusbar {
+  height: 44px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.statusbar__left,
+.statusbar__right {
+  display: flex;
+  align-items: center;
+  width: 25%;
+
+  &.statusbar__left {
+    justify-content: center;
+  }
+
+  &.statusbar__right {
+    justify-content: flex-end;
+  }
+}
+
+.statusbar__left-hour {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffff; // TODO : import variables
+}
+
+.statusbar__right-ico {
+  height: 1.2rem;
+  margin: 0 0.3rem;
+}
