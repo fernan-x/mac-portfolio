@@ -9,7 +9,7 @@
 .statusbar__right {
   display: flex;
   align-items: center;
-  width: 25%;
+  width: 15%;
 
   &.statusbar__left {
     justify-content: center;
@@ -22,11 +22,11 @@
 
 .statusbar__left-hour {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #ffffff; // TODO : import variables
 }
 
 .statusbar__right-ico {
-  height: 1.2rem;
+  height: 1.1rem;
   margin: 0 0.3rem;
 }

@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from "react";
-import moment from "moment";
+import React from "react";
 import { smartphoneImages } from "../../../constants/images";
 
 import "./StatusBar.scss";
 
-const StatusBar = () => {
-  const [date, setDate] = useState(null);
-  const [hour, setHour] = useState(null);
-  const dateFormat = "dddd, MMMM D";
-  const hourFormat = "h:mm";
-
-  useEffect(() => {
-    setDate(moment().format(dateFormat));
-    setHour(moment().format(hourFormat));
-
-    const interval = setInterval(() => {
-      setDate(moment().format(dateFormat));
-      setHour(moment().format(hourFormat));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+const StatusBar = ({ hour }) => {
   return (
     <div className="statusbar">
       <div className="statusbar__left">
