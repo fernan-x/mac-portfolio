@@ -8,7 +8,7 @@ const DesktopApp = ({ openApplication, openedApp }) => {
   return (
     <div className="desktop-app">
       <MenuBar />
-      <div style={{ width: "100%", flexGrow: "1" }}>
+      <div style={{ width: "100%", height: "calc(100% - 30px)" }}>
         {openedApp &&
           openedApp.map((item) => (
             <Window

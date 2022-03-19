@@ -25,6 +25,7 @@ const Window = ({ name, width, height, open, footer, children }) => {
       dragHandleClassName="window__header"
       resizeHandleClasses="window"
       bounds="parent"
+      className={`${!isOpen ? "draggable-closed" : ""}`}
     >
       <div className={`window${!isOpen ? " closed" : ""}`}>
         <div className="window__header">
