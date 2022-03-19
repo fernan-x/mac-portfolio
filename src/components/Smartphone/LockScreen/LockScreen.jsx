@@ -1,5 +1,6 @@
 import React from "react";
-import { smartphoneImages } from "../../../constants/images";
+import { smartphoneImages, appImages } from "../../../constants/images";
+import NotificationCard from "../NotificationCard/NotificationCard";
 import "./LockScreen.scss";
 
 const LockScreen = ({ hour, date }) => {
@@ -14,7 +15,17 @@ const LockScreen = ({ hour, date }) => {
         <span className="lockscreen__header-hour">{hour}</span>
         <span className="lockscreen__header-date">{date}</span>
       </div>
-      <div className="lockscreen__content"></div>
+      <div className="lockscreen__content">
+        <div className="lockscreen__content-notifications">
+          <NotificationCard
+            img={appImages.discord}
+            name="Discord"
+            title="Fabien sent a message"
+            desc="The smartphone experience is under construction. Try the destkop one for now 😉"
+            date="now"
+          />
+        </div>
+      </div>
       <div className="lockscreen__footer">
         <div className="lockscreen__footer-flashlight">
           <span className="custom__button">
