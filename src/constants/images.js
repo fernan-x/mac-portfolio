@@ -19,6 +19,9 @@ import wifi from "../assets/images/wifi.png";
 import search from "../assets/images/search.png";
 import controlcenter from "../assets/images/control-center.png";
 import battery from "../assets/images/battery.png";
+
+import discord from "../assets/images/applications/discord.png";
+
 import sWallpaper from "../assets/images/smartphone/wallpaper.png";
 import sLock from "../assets/images/smartphone/lock.png";
 import sBattery from "../assets/images/smartphone/battery.png";
@@ -35,6 +38,10 @@ export const smartphoneImages = {
   flashlight: sFlashlight,
   wifi: sWifi,
   signal: sSignal,
+};
+
+export const appImages = {
+  discord,
 };
 
 export const desktopImages = {
@@ -61,6 +68,6 @@ export const desktopImages = {
   battery,
 };
 
-const exportedImages = { ...smartphoneImages, ...desktopImages };
+const exportedImages = { ...smartphoneImages, ...desktopImages, ...appImages };
 
 export default exportedImages;

@@ -18,7 +18,6 @@
   }
 
   .lockscreen__header-hour {
-    font-family: "SF Pro Display";
     font-style: normal;
     font-weight: 200;
     font-size: 83px;
@@ -29,7 +28,6 @@
   }
 
   .lockscreen__header-date {
-    font-family: "SF Pro Text";
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
@@ -43,6 +41,7 @@
 
 .lockscreen__content {
   flex: 6;
+  padding: 0.8rem;
 }
 
 .lockscreen__footer {
@@ -90,7 +89,6 @@
     align-items: center;
 
     span {
-      font-family: "SF Pro Text";
       font-style: normal;
       font-weight: 400;
       font-size: 17px;
