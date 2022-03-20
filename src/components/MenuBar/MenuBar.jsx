@@ -31,7 +31,7 @@ const MenuBar = () => {
         <span className="menus">Help</span>
       </div>
       <div className="right">
-        <div className="menu-ico">
+        <div className="menu-ico battery">
           <img src={images.battery} alt="Battery" />
         </div>
         <div className="menu-ico">

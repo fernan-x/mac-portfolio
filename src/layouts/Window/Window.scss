@@ -1,5 +1,9 @@
 @import "../../assets/styles/colors";
 
+.draggable-closed {
+  display: none !important; // Overwrite the display of draggable window
+}
+
 .window {
   background-color: $color-light-background;
   border: 0.5px solid rgba(0, 0, 0, 0.12);

@@ -14,12 +14,18 @@
 
   .menu-ico {
     height: 100%;
+    max-height: 30px;
+    max-width: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
 
+    &.battery {
+      max-width: 40px; // Particular for battery icon which is larger
+    }
+
     img {
-      transform: scale(0.7);
+      transform: scale(0.5);
     }
   }
 
