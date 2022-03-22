@@ -7,6 +7,12 @@ import Window from "./layouts/Window/Window";
 const DesktopApp = ({ openApplication, openedApp }) => {
   return (
     <div className="desktop-app">
+      <div className="warning-msg">
+        <div className="warning-msg__content">
+          The desktop experience is not optimized for smartphone. Refresh the
+          page to enter the smartphone experience.
+        </div>
+      </div>
       <MenuBar />
       <div style={{ width: "100%", height: "calc(100% - 30px)" }}>
         {openedApp &&
