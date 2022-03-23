@@ -122,8 +122,8 @@ const applications = [
     id: "notes",
     name: "Notes",
     img: images.notes,
-    open: true,
-    active: true,
+    open: false,
+    active: false,
     docked: true,
     height: 500, // TODO : How to manage full screen
     width: 800,

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./MenuBar.scss";
-import images from "../../constants/images";
+import images from "../../../constants/images";
 import moment from "moment";
+import MenuPanel from "../MenuPanel/MenuPanel";
 
 const MenuBar = () => {
+  const [panelOpen, setPanelOpen] = useState(false);
   const [date, setDate] = useState(null);
   const dateFormat = "ddd D MMMM h:mm a";
 
@@ -16,10 +18,17 @@ const MenuBar = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleOpenPanel = () => {
+    setPanelOpen(!panelOpen);
+  };
+
   return (
     <div className="menu-bar">
       <div className="left">
-        <div className="menu-ico">
+        <div
+          className={`menu-ico apple${panelOpen ? " active" : ""}`}
+          onClick={handleOpenPanel}
+        >
           <img src={images.apple} alt="Apple" />
         </div>
         <span className="menus active">Finder</span>
@@ -30,6 +39,8 @@ const MenuBar = () => {
         <span className="menus">Window</span>
         <span className="menus">Help</span>
       </div>
+      {panelOpen && <MenuPanel />}
+
       <div className="right">
         <div className="menu-ico battery">
           <img src={images.battery} alt="Battery" />

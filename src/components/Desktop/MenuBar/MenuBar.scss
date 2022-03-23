@@ -20,12 +20,21 @@
     align-items: center;
     justify-content: center;
 
-    &.battery {
+    &.battery,
+    &.apple {
       max-width: 40px; // Particular for battery icon which is larger
     }
 
     img {
       transform: scale(0.5);
+    }
+
+    &:hover,
+    &.active {
+      /* TODO : Handle dark theme */
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(67.3803px);
+      border-radius: 4px;
     }
   }
 
@@ -34,7 +43,7 @@
     align-items: center;
     justify-content: space-evenly;
     width: auto;
-    margin-left: 20px;
+    margin-left: 10px;
 
     .menus {
       height: 100%;
@@ -43,6 +52,10 @@
       margin-left: 20px;
       color: rgba(255, 255, 255, 0.95);
       font-size: 14px;
+
+      &:first-of-type {
+        margin-left: 10px;
+      }
     }
     .active {
       font-weight: bold;

@@ -1,0 +1,64 @@
+@import "../../../assets/styles/colors";
+
+.menu-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 9000;
+
+  position: absolute;
+  width: 230px;
+  left: 10px;
+  top: 32px;
+  padding: 0;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(60px);
+
+  border-radius: 6px;
+}
+
+.menu-panel__entries {
+  list-style: none;
+  margin: 0 0.4em;
+  padding: 0.2em 0;
+
+  width: calc(100% - 0.8em); // Substract item padding
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $color-light-quartinerary;
+  }
+}
+
+.menu-panel__entries-label {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+
+  letter-spacing: -0.25px;
+  font-feature-settings: "zero" on;
+  color: $color-light-primary;
+  opacity: 0.9;
+
+  margin: 0.2em 0;
+  padding: 0.2em;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: default;
+    background: $color-light-blue;
+    color: #ffffff;
+  }
+}
+
+/*
+ * Dark theme
+ */
+.dark .menu-panel {
+  background: rgba(40, 40, 40, 0.6);
+}

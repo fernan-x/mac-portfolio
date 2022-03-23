@@ -2,7 +2,18 @@ import React, { useState } from "react";
 import { Rnd } from "react-rnd";
 import "./Window.scss";
 
-const Window = ({ name, width, height, open, footer, children }) => {
+const Window = ({
+  name,
+  width,
+  height,
+  open,
+  footer,
+  z,
+  maxZ,
+  setActive,
+  children,
+  id,
+}) => {
   const centerPos = {
     x: window.innerWidth / 2 - width / 2,
     y: window.innerHeight / 3 - height / 2,
@@ -12,6 +23,12 @@ const Window = ({ name, width, height, open, footer, children }) => {
 
   const closeWindow = () => {
     setOpen(false);
+  };
+
+  const handleClick = () => {
+    if (maxZ !== z) {
+      setActive(id);
+    }
   };
 
   return (
@@ -26,6 +43,9 @@ const Window = ({ name, width, height, open, footer, children }) => {
       resizeHandleClasses="window"
       bounds="parent"
       className={`${!isOpen ? "draggable-closed" : ""}`}
+      style={{ zIndex: z }}
+      onClick={handleClick}
+      onDragStart={handleClick}
     >
       <div className={`window${!isOpen ? " closed" : ""}`}>
         <div className="window__header">
