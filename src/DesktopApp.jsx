@@ -1,7 +1,7 @@
 import React from "react";
 
 import Dock from "./components/Dock/Dock";
-import MenuBar from "./components/MenuBar/MenuBar";
+import MenuBar from "./components/Desktop/MenuBar/MenuBar";
 import Window from "./layouts/Window/Window";
 
 const DesktopApp = ({
