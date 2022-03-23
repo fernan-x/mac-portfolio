@@ -5,9 +5,16 @@ import SmartphoneApp from "./SmartphoneApp";
 import DesktopApp from "./DesktopApp";
 
 function App() {
+  const defaultZ = 2;
+
   const [width, setWidth] = useState(window.innerWidth);
   const [openedApp, setOpenedApp] = useState(null);
+  const [zPosition, setZPosition] = useState({});
+  const [maxZ, setMaxZ] = useState(defaultZ);
+
   const isMobile = width <= 768;
+
+  useState(() => {}, []);
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
@@ -22,14 +29,17 @@ function App() {
 
   useEffect(() => {
     let newApp = [];
+    let appZ = {};
 
     constants.applications.forEach((item) => {
       if (item.open) {
         newApp.push(item);
+        appZ[item.id] = defaultZ;
       }
     });
 
     setOpenedApp(newApp);
+    setZPosition(appZ);
   }, []);
 
   /**
@@ -60,10 +70,31 @@ function App() {
     let app = searchApplicationById(id);
 
     if (app) {
+      // Open the application
       app.open = true;
       setOpenedApp((openedApp) => [...openedApp, app]);
+
+      // Update z positions
+      const nextZ = maxZ + 1;
+      let appZ = {};
+      appZ[id] = nextZ;
+      setMaxZ(nextZ);
+      setZPosition((zPosition) => ({ ...appZ, ...zPosition }));
     } else {
       console.log("App not defined");
+    }
+  };
+
+  const setApplicationActive = (id) => {
+    let app = searchApplicationById(id);
+
+    if (app) {
+      // Update z positions
+      const nextZ = maxZ + 1;
+      let appZ = {};
+      appZ[id] = nextZ;
+      setMaxZ(nextZ);
+      setZPosition((zPosition) => ({ ...zPosition, ...appZ }));
     }
   };
 
@@ -72,7 +103,13 @@ function App() {
       {isMobile ? (
         <SmartphoneApp />
       ) : (
-        <DesktopApp openApplication={openApplication} openedApp={openedApp} />
+        <DesktopApp
+          openApplication={openApplication}
+          openedApp={openedApp}
+          zPosition={zPosition}
+          maxZ={maxZ}
+          setApplicationActive={setApplicationActive}
+        />
       )}
     </div>
   );
