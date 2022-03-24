@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import constants from "./constants/constants";
 import SmartphoneApp from "./SmartphoneApp";
 import DesktopApp from "./DesktopApp";
+import { useConfiguration } from "./context/ConfigurationContext";
 
 function App() {
   const defaultZ = 2;
@@ -11,6 +12,7 @@ function App() {
   const [openedApp, setOpenedApp] = useState(null);
   const [zPosition, setZPosition] = useState({});
   const [maxZ, setMaxZ] = useState(defaultZ);
+  const { darkTheme } = useConfiguration();
 
   const isMobile = width <= 768;
 
@@ -99,7 +101,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App${darkTheme ? " dark" : ""}`}>
       {isMobile ? (
         <SmartphoneApp />
       ) : (
