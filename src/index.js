@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./assets/styles/styles.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ConfigurationProvider } from "./context/ConfigurationContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ConfigurationProvider>
+      <App />
+    </ConfigurationProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
