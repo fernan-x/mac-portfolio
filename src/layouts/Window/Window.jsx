@@ -32,9 +32,7 @@ const Window = ({
     }
   };
 
-  const handleDragStart = () => {
-    handleClick();
-
+  const handleDrag = () => {
     if (isFullscreen) {
       setFullscreen(false);
     }
@@ -66,7 +64,7 @@ const Window = ({
       }`}
       style={{ zIndex: z }}
       onClick={handleClick}
-      onDragStart={handleDragStart}
+      onDrag={handleDrag}
       onResize={handleResize}
     >
       <div className={`window${!isOpen ? " closed" : ""}`}>
