@@ -39,7 +39,7 @@ const MenuBar = () => {
         <span className="menus">Window</span>
         <span className="menus">Help</span>
       </div>
-      {panelOpen && <MenuPanel />}
+      <MenuPanel isOpen={panelOpen} closePanel={() => setPanelOpen(false)} />
 
       <div className="right">
         <div className="menu-ico battery">

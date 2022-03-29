@@ -76,3 +76,13 @@ body .smartphone-app.locked {
   display: flex;
   flex-direction: column;
 }
+
+/**
+ * Dark theme
+ */
+.dark {
+  .desktop-app {
+    background: url("../../assets/images/dark-colorful.jpeg") no-repeat center;
+    background-size: cover;
+  }
+}

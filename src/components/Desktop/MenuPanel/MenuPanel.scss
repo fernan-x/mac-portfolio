@@ -59,6 +59,21 @@
 /*
  * Dark theme
  */
-.dark .menu-panel {
-  background: rgba(40, 40, 40, 0.6);
+.dark {
+  .menu-panel {
+    background: rgba(40, 40, 40, 0.6);
+  }
+
+  .menu-panel__entries:not(:last-of-type) {
+    border-bottom: 1px solid $color-dark-quartinerary;
+  }
+
+  .menu-panel__entries-label {
+    color: $color-dark-primary;
+
+    &:hover {
+      background: $color-dark-blue;
+      color: default;
+    }
+  }
 }
