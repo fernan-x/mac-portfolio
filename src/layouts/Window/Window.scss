@@ -3,7 +3,7 @@
 .draggable-fullscreen {
   // Overwrite the draggable window props
   width: 100% !important;
-  height: calc(100% - 30px) !important;
+  height: calc(100% - 80px - 30px) !important;
   transform: translate(0, 30px) !important;
 }
 
