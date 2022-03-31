@@ -16,8 +16,6 @@ function App() {
 
   const isMobile = width <= 768;
 
-  useState(() => {}, []);
-
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
   };

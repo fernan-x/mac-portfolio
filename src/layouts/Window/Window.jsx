@@ -20,6 +20,7 @@ const Window = ({
   };
 
   const [isOpen, setOpen] = useState(open && open !== null);
+  const [isFullscreen, setFullscreen] = useState(false);
 
   const closeWindow = () => {
     setOpen(false);
@@ -29,6 +30,22 @@ const Window = ({
     if (maxZ !== z) {
       setActive(id);
     }
+  };
+
+  const handleDrag = () => {
+    if (isFullscreen) {
+      setFullscreen(false);
+    }
+  };
+
+  const handleResize = () => {
+    if (isFullscreen) {
+      setFullscreen(false);
+    }
+  };
+
+  const handleFullscreen = () => {
+    setFullscreen(!isFullscreen);
   };
 
   return (
@@ -42,17 +59,20 @@ const Window = ({
       dragHandleClassName="window__header"
       resizeHandleClasses="window"
       bounds="parent"
-      className={`${!isOpen ? "draggable-closed" : ""}`}
+      className={`${isFullscreen ? "draggable-fullscreen" : ""}${
+        !isOpen ? " draggable-closed" : ""
+      }`}
       style={{ zIndex: z }}
       onClick={handleClick}
-      onDragStart={handleClick}
+      onDrag={handleDrag}
+      onResize={handleResize}
     >
       <div className={`window${!isOpen ? " closed" : ""}`}>
         <div className="window__header">
           <div className="window__header-buttons">
             <button className="close" onClick={closeWindow}></button>
             <button></button>
-            <button></button>
+            <button className="fullscreen" onClick={handleFullscreen}></button>
           </div>
           <div className="window__header-title">{name}</div>
         </div>
