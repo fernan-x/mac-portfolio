@@ -3,14 +3,19 @@ import ClickAwayListener from "react-click-away-listener";
 
 import "./MenuPanel.scss";
 
-const MenuPanel = ({ isOpen, closePanel }) => {
+const MenuPanel = ({ isOpen, closePanel, openApplication }) => {
   return (
     isOpen && (
       <div className="menu-panel">
         <ClickAwayListener onClickAway={closePanel}>
           <>
             <ul className="menu-panel__entries">
-              <li className="menu-panel__entries-label">About This Mac</li>
+              <li
+                className="menu-panel__entries-label"
+                onClick={() => openApplication("about")}
+              >
+                About This Mac
+              </li>
             </ul>
             <ul className="menu-panel__entries">
               <li className="menu-panel__entries-label">System Preferences</li>

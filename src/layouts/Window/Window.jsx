@@ -8,6 +8,8 @@ const Window = ({
   height,
   open,
   footer,
+  enableFullscreen,
+  enableResizing,
   z,
   maxZ,
   setActive,
@@ -50,6 +52,7 @@ const Window = ({
 
   return (
     <Rnd
+      enableResizing={enableResizing}
       default={{
         x: centerPos.x,
         y: centerPos.y,
@@ -72,7 +75,14 @@ const Window = ({
           <div className="window__header-buttons">
             <button className="close" onClick={closeWindow}></button>
             <button></button>
-            <button className="fullscreen" onClick={handleFullscreen}></button>
+            {enableFullscreen ? (
+              <button
+                className="fullscreen"
+                onClick={handleFullscreen}
+              ></button>
+            ) : (
+              <button></button>
+            )}
           </div>
           <div className="window__header-title">{name}</div>
         </div>

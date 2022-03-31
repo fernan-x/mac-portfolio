@@ -19,7 +19,7 @@ const DesktopApp = ({
           page to enter the smartphone experience.
         </div>
       </div>
-      <MenuBar />
+      <MenuBar openApplication={openApplication} />
       <div style={{ width: "100%", height: "calc(100% - 30px)" }}>
         {openedApp &&
           openedApp.map((item) => (
@@ -30,6 +30,8 @@ const DesktopApp = ({
               open
               key={item.id}
               id={item.id}
+              enableFullscreen={item.enableFullscreen}
+              enableResizing={item.enableResizing}
               z={zPosition[item.id]}
               maxZ={maxZ}
               setActive={setApplicationActive}

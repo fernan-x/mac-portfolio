@@ -4,7 +4,7 @@ import images from "../../../constants/images";
 import moment from "moment";
 import MenuPanel from "../MenuPanel/MenuPanel";
 
-const MenuBar = () => {
+const MenuBar = ({ openApplication }) => {
   const [panelOpen, setPanelOpen] = useState(false);
   const [date, setDate] = useState(null);
   const dateFormat = "ddd D MMMM h:mm a";
@@ -39,7 +39,11 @@ const MenuBar = () => {
         <span className="menus">Window</span>
         <span className="menus">Help</span>
       </div>
-      <MenuPanel isOpen={panelOpen} closePanel={() => setPanelOpen(false)} />
+      <MenuPanel
+        isOpen={panelOpen}
+        closePanel={() => setPanelOpen(false)}
+        openApplication={openApplication}
+      />
 
       <div className="right">
         <div className="menu-ico battery">
