@@ -1,3 +1,4 @@
+import About from "../applications/About/About";
 import images from "./images";
 
 const dockEntries = [
@@ -91,6 +92,7 @@ const applications = [
   {
     id: "finder",
     name: "Finder",
+    component: null,
     img: images.finder,
     open: false,
     active: false,
@@ -103,6 +105,7 @@ const applications = [
   {
     id: "launchpad",
     name: "LaunchPad",
+    component: null,
     img: images.launchpad,
     open: false,
     active: false,
@@ -115,6 +118,7 @@ const applications = [
   {
     id: "settings",
     name: "Settings",
+    component: null,
     img: images.settings,
     open: false,
     active: false,
@@ -127,6 +131,7 @@ const applications = [
   {
     id: "notes",
     name: "Notes",
+    component: null,
     img: images.notes,
     open: false,
     active: false,
@@ -139,6 +144,7 @@ const applications = [
   {
     id: "bin",
     name: "Bin",
+    component: null,
     img: "https://findicons.com/files/icons/569/longhorn_objects/128/trash.png", // TODO : put this icon to local
     open: false,
     active: false,
@@ -152,14 +158,15 @@ const applications = [
   {
     id: "about",
     name: "About",
+    component: <About />,
     img: "",
     open: false,
     active: false,
     docked: false,
     enableFullscreen: false,
     enableResizing: false,
-    height: 300,
-    width: 500,
+    height: 350,
+    width: 600,
   },
 ];
 

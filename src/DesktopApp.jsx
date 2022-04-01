@@ -35,7 +35,9 @@ const DesktopApp = ({
               z={zPosition[item.id]}
               maxZ={maxZ}
               setActive={setApplicationActive}
-            ></Window>
+            >
+              {item.component}
+            </Window>
           ))}
       </div>
       <Dock openApplication={openApplication} />
