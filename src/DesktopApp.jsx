@@ -6,6 +6,7 @@ import Window from "./layouts/Window/Window";
 
 const DesktopApp = ({
   openApplication,
+  closeApplication,
   openedApp,
   zPosition,
   maxZ,
@@ -35,6 +36,7 @@ const DesktopApp = ({
               z={zPosition[item.id]}
               maxZ={maxZ}
               setActive={setApplicationActive}
+              closeApplication={() => closeApplication(item.id)}
             >
               {item.component}
             </Window>

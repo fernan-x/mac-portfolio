@@ -15,6 +15,7 @@ const Window = ({
   setActive,
   children,
   id,
+  closeApplication,
 }) => {
   const centerPos = {
     x: window.innerWidth / 2 - width / 2,
@@ -25,7 +26,8 @@ const Window = ({
   const [isFullscreen, setFullscreen] = useState(false);
 
   const closeWindow = () => {
-    setOpen(false);
+    //setOpen(false);
+    closeApplication();
   };
 
   const handleClick = () => {

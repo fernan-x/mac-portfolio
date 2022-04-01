@@ -51,7 +51,6 @@ const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
       elem.classList.add("active");
       // Launch app
       if (id) {
-        console.log("Launch " + id + " app");
         openApplication(id);
       }
     }
@@ -59,6 +58,7 @@ const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
 
   return (
     <li
+      id={`li-${id}`}
       className={`li-${index} ${last ? "li-bin" : ""} ${
         active ? "active" : ""
       }`}
