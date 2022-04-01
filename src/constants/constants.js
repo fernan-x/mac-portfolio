@@ -1,3 +1,4 @@
+import About from "../applications/About/About";
 import images from "./images";
 
 const dockEntries = [
@@ -91,53 +92,81 @@ const applications = [
   {
     id: "finder",
     name: "Finder",
+    component: null,
     img: images.finder,
     open: false,
     active: false,
     docked: true,
+    enableFullscreen: true,
+    enableResizing: true,
     height: 400,
     width: 600,
   },
   {
     id: "launchpad",
     name: "LaunchPad",
+    component: null,
     img: images.launchpad,
     open: false,
     active: false,
     docked: true, // TODO : modify launchpad working
+    enableFullscreen: false,
+    enableResizing: false,
     height: 400,
     width: 600,
   },
   {
     id: "settings",
     name: "Settings",
+    component: null,
     img: images.settings,
     open: false,
     active: false,
     docked: true,
+    enableFullscreen: true,
+    enableResizing: true,
     height: 500,
     width: 500,
   },
   {
     id: "notes",
     name: "Notes",
+    component: null,
     img: images.notes,
     open: false,
     active: false,
     docked: true,
+    enableFullscreen: true,
+    enableResizing: true,
     height: 500, // TODO : How to manage full screen
     width: 800,
   },
   {
     id: "bin",
     name: "Bin",
+    component: null,
     img: "https://findicons.com/files/icons/569/longhorn_objects/128/trash.png", // TODO : put this icon to local
     open: false,
     active: false,
     docked: true,
+    enableFullscreen: true,
+    enableResizing: true,
     height: 400,
     width: 600,
     last: true,
+  },
+  {
+    id: "about",
+    name: "About",
+    component: <About />,
+    img: "",
+    open: false,
+    active: false,
+    docked: false,
+    enableFullscreen: false,
+    enableResizing: false,
+    height: 350,
+    width: 600,
   },
 ];
 

@@ -54,6 +54,14 @@
     background: $color-light-blue;
     color: #ffffff;
   }
+
+  &.disabled {
+    color: $color-light-quartinerary;
+
+    &:hover {
+      background: none;
+    }
+  }
 }
 
 /*
@@ -72,8 +80,16 @@
     color: $color-dark-primary;
 
     &:hover {
-      background: $color-dark-blue;
+      background-color: $color-dark-blue;
       color: default;
+    }
+
+    &.disabled {
+      color: $color-dark-quartinerary;
+
+      &:hover {
+        background: none;
+      }
     }
   }
 }

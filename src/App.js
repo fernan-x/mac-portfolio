@@ -62,12 +62,33 @@ function App() {
   };
 
   /**
+   * Search application index in function of its id
+   *
+   * @param {string} id       Id of the application
+   * @returns                 Application index or -1 if not found
+   */
+  const searchOpenedApplicationIdxById = (id) => {
+    let idx = -1;
+
+    for (let i = 0; i < openedApp.length; i++) {
+      if (openedApp[i].id === id) {
+        idx = i;
+        break;
+      }
+    }
+
+    return idx;
+  };
+
+  /**
    * Open an application based on it's id
    *
    * @param {string} id       Id of the app to open
    */
   const openApplication = (id) => {
     let app = searchApplicationById(id);
+
+    // TODO : handle already open application
 
     if (app) {
       // Open the application
@@ -82,6 +103,22 @@ function App() {
       setZPosition((zPosition) => ({ ...appZ, ...zPosition }));
     } else {
       console.log("App not defined");
+    }
+  };
+
+  const closeApplication = (id) => {
+    let appIdx = searchOpenedApplicationIdxById(id);
+
+    if (appIdx >= 0) {
+      let newOpenedApp = [...openedApp];
+      newOpenedApp.splice(appIdx, 1);
+      setOpenedApp(newOpenedApp);
+
+      // Remove active point
+      const dockEntry = document.querySelector("#li-" + id);
+      if (dockEntry) {
+        dockEntry.classList.remove("active");
+      }
     }
   };
 
@@ -105,6 +142,7 @@ function App() {
       ) : (
         <DesktopApp
           openApplication={openApplication}
+          closeApplication={closeApplication}
           openedApp={openedApp}
           zPosition={zPosition}
           maxZ={maxZ}
