@@ -21,8 +21,6 @@ const Window = ({
     x: window.innerWidth / 2 - width / 2,
     y: window.innerHeight / 3 - height / 2,
   };
-
-  const [isOpen, setOpen] = useState(open && open !== null);
   const [isFullscreen, setFullscreen] = useState(false);
 
   const closeWindow = () => {
@@ -64,15 +62,13 @@ const Window = ({
       dragHandleClassName="window__header"
       resizeHandleClasses="window"
       bounds="parent"
-      className={`${isFullscreen ? "draggable-fullscreen" : ""}${
-        !isOpen ? " draggable-closed" : ""
-      }`}
+      className={`${isFullscreen ? "draggable-fullscreen" : ""}`}
       style={{ zIndex: z }}
       onClick={handleClick}
       onDrag={handleDrag}
       onResize={handleResize}
     >
-      <div className={`window${!isOpen ? " closed" : ""}`}>
+      <div className="window">
         <div className="window__header">
           <div className="window__header-buttons">
             <button className="close" onClick={closeWindow}></button>
