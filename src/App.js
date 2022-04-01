@@ -69,6 +69,8 @@ function App() {
   const openApplication = (id) => {
     let app = searchApplicationById(id);
 
+    // TODO : handle already open application
+
     if (app) {
       // Open the application
       app.open = true;
