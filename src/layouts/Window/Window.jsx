@@ -23,7 +23,6 @@ const Window = ({
   const [isFullscreen, setFullscreen] = useState(false);
 
   const closeWindow = () => {
-    //setOpen(false);
     closeApplication();
   };
 

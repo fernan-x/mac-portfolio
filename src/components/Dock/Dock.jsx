@@ -41,18 +41,9 @@ const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
   };
 
   const setActive = (e) => {
-    let elem = e.target;
-    if (elem.nodeName === "IMG") {
-      elem = elem.parentNode;
-    }
-
-    // Do not re open opened app
-    if (!elem.classList.contains("active")) {
-      elem.classList.add("active");
-      // Launch app
-      if (id) {
-        openApplication(id);
-      }
+    // Launch app
+    if (id) {
+      openApplication(id);
     }
   };
 

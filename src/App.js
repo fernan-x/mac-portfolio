@@ -107,6 +107,9 @@ function App() {
         if (dockEntry && !dockEntry.classList.contains("active")) {
           dockEntry.classList.add("active");
         }
+      } else {
+        // Set the application in foregroung
+        setApplicationActive(id);
       }
     } else {
       console.log("App not defined");
