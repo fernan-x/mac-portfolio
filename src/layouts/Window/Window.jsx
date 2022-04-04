@@ -6,7 +6,6 @@ const Window = ({
   name,
   width,
   height,
-  open,
   footer,
   enableFullscreen,
   enableResizing,
