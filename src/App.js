@@ -87,20 +87,27 @@ function App() {
    */
   const openApplication = (id) => {
     let app = searchApplicationById(id);
-
-    // TODO : handle already open application
-
     if (app) {
-      // Open the application
-      app.open = true;
-      setOpenedApp((openedApp) => [...openedApp, app]);
+      let appIdx = searchOpenedApplicationIdxById(id); // Check if app only is not already open
 
-      // Update z positions
-      const nextZ = maxZ + 1;
-      let appZ = {};
-      appZ[id] = nextZ;
-      setMaxZ(nextZ);
-      setZPosition((zPosition) => ({ ...appZ, ...zPosition }));
+      if (appIdx < 0) {
+        // Open the application
+        app.open = true;
+        setOpenedApp((openedApp) => [...openedApp, app]);
+
+        // Update z positions
+        const nextZ = maxZ + 1;
+        let appZ = {};
+        appZ[id] = nextZ;
+        setMaxZ(nextZ);
+        setZPosition((zPosition) => ({ ...appZ, ...zPosition }));
+
+        // Add active class
+        const dockEntry = document.querySelector("#li-" + id);
+        if (dockEntry && !dockEntry.classList.contains("active")) {
+          dockEntry.classList.add("active");
+        }
+      }
     } else {
       console.log("App not defined");
     }

@@ -28,7 +28,6 @@ const DesktopApp = ({
               name={item.name}
               width={item.width}
               height={item.height}
-              open
               key={item.id}
               id={item.id}
               enableFullscreen={item.enableFullscreen}
