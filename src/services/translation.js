@@ -3,11 +3,13 @@ import { initReactI18next } from "react-i18next";
 import frTranslation from "../locales/fr_FR/translation.json";
 import enTranslation from "../locales/en_US/translation.json";
 import enDesktop from "../locales/en_US/desktop.json";
+import enApp from "../locales/en_US/applications.json";
 
 const resources = {
   en: {
     common: enTranslation,
     desktop: enDesktop,
+    app: enApp,
   },
   fr: {
     translation: frTranslation,

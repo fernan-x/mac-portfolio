@@ -1,9 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import fabien from "../../assets/images/fabien.png";
 import "./About.scss";
 
 const About = () => {
+  const { t } = useTranslation(["app"]);
   const age = new Date().getFullYear() - 1997;
 
   return (
@@ -17,27 +19,29 @@ const About = () => {
             <span className="bold">Fabien</span> Fernandes Alves
           </p>
           <p className="about__description-header_version">
-            <span>Fullstack PHP / React developer</span>
+            <span>{t("app:about-job")}</span>
           </p>
         </div>
         <div className="about__description-content">
           <p>
-            <span>Age</span> {age}
+            <span>{t("app:about-age")}</span> {age}
           </p>
           <p>
-            <span>Mail address</span> fernandesalvesfabien@gmail.com
+            <span>{t("app:about-mail")}</span> fernandesalvesfabien@gmail.com
           </p>
           <p>
-            <span>Location</span> 2 impasse des biches, 44470 Carquefou
+            <span>{t("app:about-location")}</span> 2 impasse des biches, 44470
+            Carquefou
           </p>
           <p>
-            <span>Country</span> France
+            <span>{t("app:about-country")}</span> {t("app:about-france")}
           </p>
           <p>
-            <span>Speaking</span> French, English
+            <span>{t("app:about-speaking")}</span> {t("app:about-french")},{" "}
+            {t("app:about-english")}
           </p>
           <p>
-            <span>Creed</span> Every person you meet has a lesson to teach
+            <span>{t("app:about-creed")}</span> {t("app:about-everyperson")}
           </p>
         </div>
         <div className="about__description-footer"></div>
