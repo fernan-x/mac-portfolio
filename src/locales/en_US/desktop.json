@@ -9,5 +9,12 @@
   "menu-shutdown": "Shut Down",
   "menu-lock": "Lock",
   "menu-logout": "Log Out Big Sur",
-  "menu-appstore": "App Store"
+  "menu-appstore": "App Store",
+  "menubar-finder": "Finder",
+  "menubar-file": "File",
+  "menubar-edit": "Edit",
+  "menubar-view": "View",
+  "menubar-window": "Window",
+  "menubar-help": "Help",
+  "menubar-go": "Go"
 }
