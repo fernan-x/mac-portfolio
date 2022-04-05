@@ -1,3 +1,13 @@
 {
-  "warning-smartphoneMsg": "The desktop experience is not optimized for smartphone. Refresh the page to enter the smartphone experience."
+  "warning-smartphoneMsg": "The desktop experience is not optimized for smartphone. Refresh the page to enter the smartphone experience.",
+  "menu-about": "About This Mac",
+  "menu-settings": "System Preferences",
+  "menu-recent": "Recent Items",
+  "menu-quit": "Force Quit Finder",
+  "menu-sleep": "Sleep",
+  "menu-restart": "Restart",
+  "menu-shutdown": "Shut Down",
+  "menu-lock": "Lock",
+  "menu-logout": "Log Out Big Sur",
+  "menu-appstore": "App Store"
 }
