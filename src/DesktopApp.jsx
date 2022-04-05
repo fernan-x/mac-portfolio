@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Dock from "./components/Dock/Dock";
 import MenuBar from "./components/Desktop/MenuBar/MenuBar";
@@ -12,12 +13,12 @@ const DesktopApp = ({
   maxZ,
   setApplicationActive,
 }) => {
+  const { t } = useTranslation(["desktop"]);
   return (
     <div className="desktop-app">
       <div className="warning-msg">
         <div className="warning-msg__content">
-          The desktop experience is not optimized for smartphone. Refresh the
-          page to enter the smartphone experience.
+          {t("desktop:warning-smartphoneMsg")}
         </div>
       </div>
       <MenuBar openApplication={openApplication} />
