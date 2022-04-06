@@ -2,8 +2,11 @@ import React from "react";
 import { smartphoneImages, appImages } from "../../../constants/images";
 import NotificationCard from "../NotificationCard/NotificationCard";
 import "./LockScreen.scss";
+import { useTranslation } from "react-i18next";
 
 const LockScreen = ({ hour, date }) => {
+  const { t } = useTranslation(["smartphone"]);
+
   return (
     <div className="lockscreen">
       <div className="lockscreen__header">
@@ -20,8 +23,8 @@ const LockScreen = ({ hour, date }) => {
           <NotificationCard
             img={appImages.discord}
             name="Discord"
-            title="Fabien send a message"
-            desc="The smartphone experience is under construction. Try the destkop one for now 😉"
+            title={t("smartphone:notifications.discord.title")}
+            desc={t("smartphone:notifications.discord.desc")}
             date="now"
           />
         </div>

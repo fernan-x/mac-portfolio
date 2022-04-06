@@ -4,12 +4,14 @@ import frTranslation from "../locales/fr_FR/translation.json";
 import enTranslation from "../locales/en_US/translation.json";
 import enDesktop from "../locales/en_US/desktop.json";
 import enApp from "../locales/en_US/applications.json";
+import enSmartphone from "../locales/en_US/smartphone.json";
 
 const resources = {
   en: {
     common: enTranslation,
     desktop: enDesktop,
     app: enApp,
+    smartphone: enSmartphone,
   },
   fr: {
     translation: frTranslation,
