@@ -2,8 +2,11 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import frTranslation from "../locales/fr_FR/translation.json";
 import enTranslation from "../locales/en_US/translation.json";
+import frDesktop from "../locales/fr_FR/desktop.json";
 import enDesktop from "../locales/en_US/desktop.json";
+import frApp from "../locales/fr_FR/applications.json";
 import enApp from "../locales/en_US/applications.json";
+import frSmartphone from "../locales/fr_FR/smartphone.json";
 import enSmartphone from "../locales/en_US/smartphone.json";
 
 const resources = {
@@ -14,7 +17,10 @@ const resources = {
     smartphone: enSmartphone,
   },
   fr: {
-    translation: frTranslation,
+    common: frTranslation,
+    desktop: frDesktop,
+    app: frApp,
+    smartphone: frSmartphone,
   },
 };
 
