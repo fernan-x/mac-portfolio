@@ -1,4 +1,5 @@
 import About from "../applications/About/About";
+import Construction from "../applications/Construction/Construction";
 import images from "./images";
 
 const dockEntries = [
@@ -92,7 +93,7 @@ const applications = [
   {
     id: "finder",
     name: "Finder",
-    component: null,
+    component: <Construction />,
     img: images.finder,
     open: false,
     active: false,
@@ -105,7 +106,7 @@ const applications = [
   {
     id: "launchpad",
     name: "LaunchPad",
-    component: null,
+    component: <Construction />,
     img: images.launchpad,
     open: false,
     active: false,
@@ -118,7 +119,7 @@ const applications = [
   {
     id: "settings",
     name: "Settings",
-    component: null,
+    component: <Construction />,
     img: images.settings,
     open: false,
     active: false,
@@ -131,7 +132,7 @@ const applications = [
   {
     id: "notes",
     name: "Notes",
-    component: null,
+    component: <Construction />,
     img: images.notes,
     open: false,
     active: false,
@@ -144,7 +145,7 @@ const applications = [
   {
     id: "bin",
     name: "Bin",
-    component: null,
+    component: <Construction />,
     img: "https://findicons.com/files/icons/569/longhorn_objects/128/trash.png", // TODO : put this icon to local
     open: false,
     active: false,

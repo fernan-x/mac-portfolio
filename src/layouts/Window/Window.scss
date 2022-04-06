@@ -77,6 +77,8 @@
 .window__content {
   background-color: $color-light-background-inactive;
   flex-grow: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .window__footer {

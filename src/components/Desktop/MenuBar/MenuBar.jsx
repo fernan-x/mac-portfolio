@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
+
+import { useTranslation } from "react-i18next";
+
 import "./MenuBar.scss";
+
 import images from "../../../constants/images";
 import moment from "moment";
 import MenuPanel from "../MenuPanel/MenuPanel";
 
 const MenuBar = ({ openApplication }) => {
+  const { t } = useTranslation(["desktop"]);
   const [panelOpen, setPanelOpen] = useState(false);
   const [date, setDate] = useState(null);
   const dateFormat = "ddd D MMMM h:mm a";
@@ -31,13 +36,13 @@ const MenuBar = ({ openApplication }) => {
         >
           <img src={images.apple} alt="Apple" />
         </div>
-        <span className="menus active">Finder</span>
-        <span className="menus">File</span>
-        <span className="menus">Edit</span>
-        <span className="menus">View</span>
-        <span className="menus">Go</span>
-        <span className="menus">Window</span>
-        <span className="menus">Help</span>
+        <span className="menus active">{t("desktop:menubar-finder")}</span>
+        <span className="menus">{t("desktop:menubar-file")}</span>
+        <span className="menus">{t("desktop:menubar-edit")}</span>
+        <span className="menus">{t("desktop:menubar-view")}</span>
+        <span className="menus">{t("desktop:menubar-go")}</span>
+        <span className="menus">{t("desktop:menubar-window")}</span>
+        <span className="menus">{t("desktop:menubar-help")}</span>
       </div>
       <MenuPanel
         isOpen={panelOpen}
