@@ -23,8 +23,8 @@ const LockScreen = ({ hour, date }) => {
           <NotificationCard
             img={appImages.discord}
             name="Discord"
-            title={t("smartphone:notifications.discord.title")}
-            desc={t("smartphone:notifications.discord.desc")}
+            title={t("smartphone:notification-discord-title")}
+            desc={t("smartphone:notification-discord-message")}
             date="now"
           />
         </div>
