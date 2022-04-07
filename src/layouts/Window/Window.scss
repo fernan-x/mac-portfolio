@@ -77,7 +77,9 @@
 .window__content {
   background-color: $color-light-background-inactive;
   flex-grow: 1;
-  height: 100%;
+  height: calc(
+    100% - 25px - 28px - 0.4rem
+  ); // Substract the header and footer height and padding
   width: 100%;
 }
 
