@@ -9,5 +9,8 @@
   "about-france": "France",
   "about-english": "Anglais",
   "about-french": "Français",
-  "about-everyperson": "Chaque personne que vous rencontrez a une leçon à enseigner"
+  "about-everyperson": "Chaque personne que vous rencontrez a une leçon à enseigner",
+  "settings-theme-mode": "Mode d'apparence",
+  "settings-light": "Clair",
+  "settings-dark": "Sombre"
 }

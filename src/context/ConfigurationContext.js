@@ -4,10 +4,18 @@ const ConfigurationContext = createContext();
 
 const ConfigurationProvider = (props) => {
   const [darkTheme, setDarkTheme] = useState(true);
-  const [colorfulBackground, setColorfulBackground] = useState(false);
+  const [colorfulBackground, setColorfulBackground] = useState(true);
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
+  };
+
+  const setTheme = (theme) => {
+    if (theme === "dark") {
+      setDarkTheme(true);
+    } else if (theme === "light") {
+      setDarkTheme(false);
+    }
   };
 
   const toggleBackground = () => {
@@ -21,6 +29,7 @@ const ConfigurationProvider = (props) => {
         colorfulBackground,
         toggleTheme,
         toggleBackground,
+        setTheme,
       }}
       {...props}
     />

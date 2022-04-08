@@ -19,6 +19,8 @@ import wifi from "../assets/images/wifi.png";
 import search from "../assets/images/search.png";
 import controlcenter from "../assets/images/control-center.png";
 import battery from "../assets/images/battery.png";
+import lightToggle from "../assets/images/desktop/toggle-theme-light.png";
+import darkToggle from "../assets/images/desktop/toggle-theme-dark.png";
 
 import discord from "../assets/images/applications/discord.png";
 
@@ -66,6 +68,8 @@ export const desktopImages = {
   search,
   controlcenter,
   battery,
+  lightToggle,
+  darkToggle,
 };
 
 const exportedImages = { ...smartphoneImages, ...desktopImages, ...appImages };

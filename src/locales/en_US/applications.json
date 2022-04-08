@@ -9,5 +9,8 @@
   "about-france": "France",
   "about-english": "English",
   "about-french": "French",
-  "about-everyperson": "Every person you meet has a lesson to teach"
+  "about-everyperson": "Every person you meet has a lesson to teach",
+  "settings-theme-mode": "Appearance",
+  "settings-light": "Light",
+  "settings-dark": "Dark"
 }
