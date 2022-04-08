@@ -7,7 +7,7 @@ import "./Settings.scss";
 import { useTranslation } from "react-i18next";
 
 const Settings = () => {
-  const { toggleBackground, setTheme, darkTheme } = useConfiguration();
+  const { setTheme, darkTheme } = useConfiguration();
   const { t } = useTranslation(["app"]);
 
   const handleLightThemeClick = () => {
