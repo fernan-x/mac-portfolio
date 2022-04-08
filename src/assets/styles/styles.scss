@@ -30,9 +30,17 @@ body {
 }
 
 body .desktop-app {
-  background: url("../../assets/images/light-colorful.jpeg") no-repeat center;
-  background-size: cover;
   height: 100%;
+
+  &.bg-colorful {
+    background: url("../../assets/images/light-colorful.jpeg") no-repeat center;
+    background-size: cover;
+  }
+
+  &.bg-landscape {
+    background: url("../../assets/images/light-landscape.jpeg") no-repeat center;
+    background-size: cover;
+  }
 
   .warning-msg {
     display: none;
@@ -82,7 +90,15 @@ body .smartphone-app.locked {
  */
 .dark {
   .desktop-app {
-    background: url("../../assets/images/dark-colorful.jpeg") no-repeat center;
-    background-size: cover;
+    &.bg-colorful {
+      background: url("../../assets/images/dark-colorful.jpeg") no-repeat center;
+      background-size: cover;
+    }
+
+    &.bg-landscape {
+      background: url("../../assets/images/dark-landscape.jpeg") no-repeat
+        center;
+      background-size: cover;
+    }
   }
 }

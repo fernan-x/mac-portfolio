@@ -1,5 +1,6 @@
 import About from "../applications/About/About";
 import Construction from "../applications/Construction/Construction";
+import Settings from "../applications/Settings/Settings";
 import images from "./images";
 
 const dockEntries = [
@@ -119,7 +120,7 @@ const applications = [
   {
     id: "settings",
     name: "Settings",
-    component: <Construction />,
+    component: <Settings />,
     img: images.settings,
     open: false,
     active: false,
