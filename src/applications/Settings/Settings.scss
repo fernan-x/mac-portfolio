@@ -12,8 +12,6 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-
-  border-bottom: 1px solid $color-light-gray1;
 }
 
 .setting__section-row {
@@ -70,9 +68,5 @@
 .dark {
   .entry-card_image.active {
     border: 2px solid $color-dark-blue;
-  }
-
-  .setting__section {
-    border-bottom: 1px solid $color-dark-gray1;
   }
 }

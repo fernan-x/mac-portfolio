@@ -5,6 +5,7 @@ import { desktopImages } from "../../constants/images";
 
 import "./Settings.scss";
 import { useTranslation } from "react-i18next";
+import Divider from "../../components/Desktop/Divider/Divider";
 
 const Settings = () => {
   const { setTheme, darkTheme } = useConfiguration();
@@ -24,7 +25,7 @@ const Settings = () => {
       <button onClick={() => toggleBackground()}>Togle backgroung</button> */}
       <div className="setting__section">
         <div className="setting__section-row">
-          <div className="setting__section-row_label">
+          <div className="setting__section-row_label text__default">
             {t("app:settings-theme-mode")} :
           </div>
           <div className="setting__section-row_value">
@@ -35,7 +36,7 @@ const Settings = () => {
                 onClick={handleLightThemeClick}
                 className={`entry-card_image${!darkTheme ? " active" : ""}`}
               />
-              <span>{t("app:settings-light")}</span>
+              <span className="text__default">{t("app:settings-light")}</span>
             </div>
 
             <div className="entry-card">
@@ -45,11 +46,12 @@ const Settings = () => {
                 onClick={handleDarkThemeClick}
                 className={`entry-card_image${darkTheme ? " active" : ""}`}
               />
-              <span>{t("app:settings-dark")}</span>
+              <span className="text__default">{t("app:settings-dark")}</span>
             </div>
           </div>
         </div>
       </div>
+      <Divider />
     </div>
   );
 };
