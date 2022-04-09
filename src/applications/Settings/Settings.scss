@@ -16,7 +16,6 @@
 
 .setting__section-row {
   display: flex;
-  margin: 1rem;
 
   .setting__section-row_label {
     width: 30%;
@@ -41,10 +40,10 @@
 
     .entry-card_image {
       width: 80px;
+      border-radius: 10px;
 
       &.active {
         border: 2px solid $color-light-blue;
-        border-radius: 10px;
       }
 
       &:not(.active) {

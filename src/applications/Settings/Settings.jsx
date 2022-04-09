@@ -1,14 +1,18 @@
 import React from "react";
 import { useConfiguration } from "../../context/ConfigurationContext";
-
+import { useTranslation } from "react-i18next";
 import { desktopImages } from "../../constants/images";
+import Divider from "../../components/Desktop/Divider/Divider";
+import colorful from "../../assets/images/light-colorful.jpeg";
+import colorfulDark from "../../assets/images/dark-colorful.jpeg";
+import landscape from "../../assets/images/light-landscape.jpeg";
+import landscapeDark from "../../assets/images/dark-landscape.jpeg";
 
 import "./Settings.scss";
-import { useTranslation } from "react-i18next";
-import Divider from "../../components/Desktop/Divider/Divider";
 
 const Settings = () => {
-  const { setTheme, darkTheme } = useConfiguration();
+  const { setTheme, darkTheme, colorfulBackground, setBackground } =
+    useConfiguration();
   const { t } = useTranslation(["app"]);
 
   const handleLightThemeClick = () => {
@@ -19,10 +23,16 @@ const Settings = () => {
     setTheme("dark");
   };
 
+  const handleColorfulBackgroundClick = () => {
+    setBackground("colorful");
+  };
+
+  const handleLandscapeBackgroundClick = () => {
+    setBackground("landscape");
+  };
+
   return (
     <div className="setting">
-      {/* <button onClick={() => toggleTheme()}>Togle theme</button>
-      <button onClick={() => toggleBackground()}>Togle backgroung</button> */}
       <div className="setting__section">
         <div className="setting__section-row">
           <div className="setting__section-row_label text__default">
@@ -50,7 +60,43 @@ const Settings = () => {
             </div>
           </div>
         </div>
+
+        <div className="setting__section-row">
+          <div className="setting__section-row_label text__default">
+            {t("app:settings-wallpaper")} :
+          </div>
+          <div className="setting__section-row_value">
+            <div className="entry-card">
+              <img
+                src={darkTheme ? colorfulDark : colorful}
+                alt="toggle colorful"
+                onClick={handleColorfulBackgroundClick}
+                className={`entry-card_image${
+                  colorfulBackground ? " active" : ""
+                }`}
+              />
+              <span className="text__default">
+                {t("app:settings-colorful")}
+              </span>
+            </div>
+
+            <div className="entry-card">
+              <img
+                src={darkTheme ? landscapeDark : landscape}
+                alt="toggle landscape"
+                onClick={handleLandscapeBackgroundClick}
+                className={`entry-card_image${
+                  !colorfulBackground ? " active" : ""
+                }`}
+              />
+              <span className="text__default">
+                {t("app:settings-landscape")}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
+
       <Divider />
     </div>
   );

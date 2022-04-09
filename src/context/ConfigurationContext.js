@@ -18,6 +18,14 @@ const ConfigurationProvider = (props) => {
     }
   };
 
+  const setBackground = (variant) => {
+    if (variant === "colorful") {
+      setColorfulBackground(true);
+    } else if (variant === "landscape") {
+      setColorfulBackground(false);
+    }
+  };
+
   const toggleBackground = () => {
     setColorfulBackground(!colorfulBackground);
   };
@@ -30,6 +38,7 @@ const ConfigurationProvider = (props) => {
         toggleTheme,
         toggleBackground,
         setTheme,
+        setBackground,
       }}
       {...props}
     />
