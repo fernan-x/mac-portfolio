@@ -1,0 +1,23 @@
+@import "../../../assets/styles/colors";
+
+.divider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 1px;
+
+  .divider__line {
+    width: 90%;
+    height: 1px;
+    background: $color-light-quartinerary;
+  }
+}
+
+/*
+ * Manage dark theme
+ */
+.dark {
+  .divider__line {
+    background: $color-dark-quartinerary;
+  }
+}

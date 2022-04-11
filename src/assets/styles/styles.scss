@@ -1,5 +1,7 @@
+@import "./colors";
+
 * {
-  font-family: "San Francisco";
+  font-family: "SF Pro", "San Francisco";
 }
 
 html,
@@ -9,7 +11,8 @@ body,
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: "San Francisco";
+  font-family: "SF Pro", "San Francisco";
+  color: $color-light-primary;
 }
 
 @font-face {
@@ -30,9 +33,17 @@ body {
 }
 
 body .desktop-app {
-  background: url("../../assets/images/light-colorful.jpeg") no-repeat center;
-  background-size: cover;
   height: 100%;
+
+  &.bg-colorful {
+    background: url("../../assets/images/light-colorful.jpeg") no-repeat center;
+    background-size: cover;
+  }
+
+  &.bg-landscape {
+    background: url("../../assets/images/light-landscape.jpeg") no-repeat center;
+    background-size: cover;
+  }
 
   .warning-msg {
     display: none;
@@ -77,12 +88,30 @@ body .smartphone-app.locked {
   flex-direction: column;
 }
 
+.text__default {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.35px;
+}
+
 /**
  * Dark theme
  */
 .dark {
+  color: $color-dark-primary;
+
   .desktop-app {
-    background: url("../../assets/images/dark-colorful.jpeg") no-repeat center;
-    background-size: cover;
+    &.bg-colorful {
+      background: url("../../assets/images/dark-colorful.jpeg") no-repeat center;
+      background-size: cover;
+    }
+
+    &.bg-landscape {
+      background: url("../../assets/images/dark-landscape.jpeg") no-repeat
+        center;
+      background-size: cover;
+    }
   }
 }
