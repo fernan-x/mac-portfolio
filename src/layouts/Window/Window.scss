@@ -81,6 +81,7 @@
     100% - 25px - 28px - 0.4rem
   ); // Substract the header and footer height and padding
   width: 100%;
+  overflow-x: auto;
 }
 
 .window__footer {

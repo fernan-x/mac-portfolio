@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Dock from "./components/Dock/Dock";
 import MenuBar from "./components/Desktop/MenuBar/MenuBar";
 import Window from "./layouts/Window/Window";
+import { useConfiguration } from "./context/ConfigurationContext";
 
 const DesktopApp = ({
   openApplication,
@@ -14,8 +15,14 @@ const DesktopApp = ({
   setApplicationActive,
 }) => {
   const { t } = useTranslation(["desktop"]);
+  const { colorfulBackground } = useConfiguration();
+
   return (
-    <div className="desktop-app">
+    <div
+      className={`desktop-app ${
+        colorfulBackground ? "bg-colorful" : "bg-landscape"
+      }`}
+    >
       <div className="warning-msg">
         <div className="warning-msg__content">
           {t("desktop:warning-smartphoneMsg")}
