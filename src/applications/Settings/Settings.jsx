@@ -3,6 +3,8 @@ import { useConfiguration } from "../../context/ConfigurationContext";
 import { useTranslation } from "react-i18next";
 import { desktopImages } from "../../constants/images";
 import Divider from "../../components/Desktop/Divider/Divider";
+import BigSurSelect from "../../components/Desktop/BigSurSelect/BigSurSelect";
+
 import colorful from "../../assets/images/light-colorful.jpeg";
 import colorfulDark from "../../assets/images/dark-colorful.jpeg";
 import landscape from "../../assets/images/light-landscape.jpeg";
@@ -112,10 +114,13 @@ const Settings = () => {
             {t("app:settings-language")} :
           </div>
           <div className="setting__section-row_value">
-            <select onChange={changeLanguage} defaultValue={i18n.language}>
+            <BigSurSelect
+              onChange={changeLanguage}
+              defaultValue={i18n.language}
+            >
               <option value="fr">{t("app:about-french")}</option>
               <option value="en">{t("app:about-english")}</option>
-            </select>
+            </BigSurSelect>
           </div>
         </div>
       </div>
