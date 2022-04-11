@@ -8,6 +8,7 @@ import colorfulDark from "../../assets/images/dark-colorful.jpeg";
 import landscape from "../../assets/images/light-landscape.jpeg";
 import landscapeDark from "../../assets/images/dark-landscape.jpeg";
 
+import i18n from "../../services/translation";
 import "./Settings.scss";
 
 const Settings = () => {
@@ -29,6 +30,12 @@ const Settings = () => {
 
   const handleLandscapeBackgroundClick = () => {
     setBackground("landscape");
+  };
+
+  const changeLanguage = (e) => {
+    if (i18n.language !== e.target.value) {
+      i18n.changeLanguage(e.target.value);
+    }
   };
 
   return (
@@ -98,6 +105,20 @@ const Settings = () => {
       </div>
 
       <Divider />
+
+      <div className="setting__section">
+        <div className="setting__section-row spaced">
+          <div className="setting__section-row_label text__default">
+            {t("app:settings-language")} :
+          </div>
+          <div className="setting__section-row_value">
+            <select onChange={changeLanguage} defaultValue={i18n.language}>
+              <option value="fr">{t("app:about-french")}</option>
+              <option value="en">{t("app:about-english")}</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -17,6 +17,10 @@
 .setting__section-row {
   display: flex;
 
+  &.spaced {
+    margin: 1rem 0.5rem;
+  }
+
   .setting__section-row_label {
     width: 30%;
     min-width: 150px;
@@ -40,6 +44,7 @@
 
     .entry-card_image {
       width: 80px;
+      height: 52px;
       border-radius: 10px;
 
       &.active {
