@@ -67,7 +67,7 @@ const applications = [
     docked: true,
     enableFullscreen: true,
     enableResizing: true,
-    height: 500,
+    height: 600,
     width: 800,
   },
   {

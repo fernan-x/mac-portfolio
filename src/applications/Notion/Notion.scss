@@ -1,10 +1,108 @@
+$color-gray: #8f8e8a;
+$color-text-light: #37352f;
+$color-text-dark: #ebebeb;
+$gutter: 7rem;
+
 .notion {
   width: 100%;
   height: 100%;
+
+  color: $color-text-light;
+}
+
+.notion__header {
+  position: relative;
+}
+
+.notion__header-navigation {
+  background-color: red;
+  height: 30px;
+}
+
+.notion__header-banner {
+  background: #ed4264; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffedbc,
+    #ed4264
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffedbc,
+    #ed4264
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height: 175px;
+}
+
+.notion__header-picture {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+
+  bottom: -30px;
+  left: $gutter;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.notion__content {
+  // background-color: #ed4264;
+  // height: 1000px;
+  margin: 4rem $gutter;
+}
+
+.notion-quote {
+  border-left: solid 3px $color-text-light;
+  padding-left: 1.5rem;
+}
+
+.notion-bloc {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+
+  & div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.notion-divider {
+  height: 1px;
+  width: 100%;
+  background-color: $color-gray;
+  margin: 1.5rem 0;
+}
+
+.notion-emoji {
+  width: 15px;
+  margin-right: 0.4rem;
+}
+
+.notion-link {
+  color: inherit;
+  border-bottom: 1px solid $color-gray;
+  text-decoration: none;
 }
 
 /**
  * Manage dark theme
  */
 .dark {
+  .notion {
+    color: $color-text-dark;
+  }
+
+  .notion-quote {
+    border-left: solid 3px $color-text-dark;
+  }
 }

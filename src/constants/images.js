@@ -33,6 +33,9 @@ import sFlashlight from "../assets/images/smartphone/flashlight.png";
 import sWifi from "../assets/images/smartphone/wifi.png";
 import sSignal from "../assets/images/smartphone/signal.png";
 
+import linkedinEmoji from "../assets/images/linkedin_emoji.png";
+import githubEmoji from "../assets/images/github_emoji.png";
+
 export const smartphoneImages = {
   wallpaper: sWallpaper,
   lock: sLock,
@@ -46,6 +49,11 @@ export const smartphoneImages = {
 export const appImages = {
   discord,
   notion,
+};
+
+export const emojis = {
+  linkedinEmoji,
+  githubEmoji,
 };
 
 export const desktopImages = {
@@ -74,6 +82,11 @@ export const desktopImages = {
   darkToggle,
 };
 
-const exportedImages = { ...smartphoneImages, ...desktopImages, ...appImages };
+const exportedImages = {
+  ...smartphoneImages,
+  ...desktopImages,
+  ...appImages,
+  ...emojis,
+};
 
 export default exportedImages;
