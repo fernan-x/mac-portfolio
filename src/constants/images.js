@@ -23,6 +23,7 @@ import lightToggle from "../assets/images/desktop/toggle-theme-light.png";
 import darkToggle from "../assets/images/desktop/toggle-theme-dark.png";
 
 import discord from "../assets/images/applications/discord.png";
+import notion from "../assets/images/applications/notion.png";
 
 import sWallpaper from "../assets/images/smartphone/wallpaper.png";
 import sLock from "../assets/images/smartphone/lock.png";
@@ -31,6 +32,9 @@ import sCamera from "../assets/images/smartphone/camera.png";
 import sFlashlight from "../assets/images/smartphone/flashlight.png";
 import sWifi from "../assets/images/smartphone/wifi.png";
 import sSignal from "../assets/images/smartphone/signal.png";
+
+import linkedinEmoji from "../assets/images/linkedin_emoji.png";
+import githubEmoji from "../assets/images/github_emoji.png";
 
 export const smartphoneImages = {
   wallpaper: sWallpaper,
@@ -44,6 +48,12 @@ export const smartphoneImages = {
 
 export const appImages = {
   discord,
+  notion,
+};
+
+export const emojis = {
+  linkedinEmoji,
+  githubEmoji,
 };
 
 export const desktopImages = {
@@ -72,6 +82,11 @@ export const desktopImages = {
   darkToggle,
 };
 
-const exportedImages = { ...smartphoneImages, ...desktopImages, ...appImages };
+const exportedImages = {
+  ...smartphoneImages,
+  ...desktopImages,
+  ...appImages,
+  ...emojis,
+};
 
 export default exportedImages;
