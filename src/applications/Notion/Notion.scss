@@ -19,6 +19,28 @@ $gutter: 7rem;
   display: flex;
   align-items: center;
 
+  .arrow {
+    display: flex;
+    align-items: center;
+    margin: 0 0.4rem;
+
+    .arrow__back,
+    .arrow__next {
+      margin: 0 0.2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.disabled {
+        opacity: 0.5;
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+
   .breadcrumb {
     display: flex;
     align-items: center;
@@ -57,8 +79,8 @@ $gutter: 7rem;
 
 .notion__header-picture {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 
   bottom: -30px;
   left: $gutter;
@@ -67,9 +89,11 @@ $gutter: 7rem;
   justify-content: center;
   align-items: center;
 
-  img {
+  img,
+  span {
     width: 120px;
     height: 120px;
+    font-size: 110px;
   }
 }
 

@@ -1,29 +1,43 @@
 import React, { useState } from "react";
 
 import "./Notion.scss";
-import { emojis } from "../../constants/images";
 import fabien from "../../assets/images/fabien.png";
 import { useTranslation } from "react-i18next";
+import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
+import NotionMainPage from "./NotionMainPage";
+import NotionProjectPage from "./NotionProjectPage";
 
 const Notion = () => {
   const { t } = useTranslation(["app"]);
+
+  const [currentPage, setCurrentPage] = useState("project");
+  const [backHistory, setBackHistory] = useState([]);
+  const [nextHistory, setNextHistory] = useState([]);
 
   const pages = {
     main: {
       title: t("app:notion-main-title"),
       icon: <img src={fabien} alt="fabien" className="notion-emoji" />,
       breadcrumb: ["main"],
+      content: <NotionMainPage />,
+      headerPicture: <img src={fabien} alt="fabien" />,
     },
     project: {
       title: t("app:notion-project-title"),
       icon: <span className="notion-emoji">📜</span>,
       breadcrumb: ["main", "project"],
+      content: <NotionProjectPage />,
+      headerPicture: <span>📜</span>,
     },
   };
 
-  const [currentPage, setCurrentPage] = useState("project");
-  const [backHistory, setBackHistory] = useState([]);
-  const [nextHistory, setNextHistory] = useState([]);
+  const displayContent = () => {
+    return pages[currentPage].content;
+  };
+
+  const displayHeaderPicture = () => {
+    return pages[currentPage].headerPicture;
+  };
 
   const changePage = (page) => {
     if (page !== currentPage) {
@@ -66,8 +80,22 @@ const Notion = () => {
     return (
       <div className="notion__header-navigation">
         <div className="arrow">
-          <span className="arrow__back">⬅️</span>
-          <span className="arrow_next">➡️</span>
+          <span
+            className={`arrow__back${
+              backHistory.length === 0 ? " disabled" : ""
+            }`}
+            onClick={goBack}
+          >
+            <VscArrowLeft />
+          </span>
+          <span
+            className={`arrow__next ${
+              nextHistory.length === 0 ? " disabled" : ""
+            }`}
+            onClick={goNext}
+          >
+            <VscArrowRight />
+          </span>
         </div>
         <div className="breadcrumb">
           {breadcrumb.map((item, index) => {
@@ -96,83 +124,9 @@ const Notion = () => {
       <div className="notion__header">
         {displayHeader()}
         <div className="notion__header-banner"></div>
-        <div className="notion__header-picture">
-          <img src={fabien} alt="fabien" />
-        </div>
+        <div className="notion__header-picture">{displayHeaderPicture()}</div>
       </div>
-      <div className="notion__content">
-        <h1>Fabien Fernandes Alves</h1>
-        <p className="notion-quote">
-          I'm a french fullstack developer 🇫🇷. Tech lover & passionnate, I spend
-          lot of time developping all kind of applications. Gratuated at Epitech
-          Nantes, I've spend 1 year studying in Bahrein 🎓.
-        </p>
-        <br />
-        <h2>☎️ Personal informations</h2>
-        <div className="notion-bloc">
-          <div>
-            <span className="notion-emoji">📧</span>
-            fernandesalvesfabien@gmail.com
-          </div>
-          <div>
-            <img
-              className="notion-emoji"
-              src={emojis.linkedinEmoji}
-              alt="linkedin"
-            />{" "}
-            <a
-              href="https://www.linkedin.com/in/fabien-fernandes-alves/"
-              target="_blank"
-              rel="noreferrer"
-              className="notion-link"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-        <div className="notion-bloc">
-          <div>
-            <span className="notion-emoji">📍</span>Nantes, France
-          </div>
-          <div>
-            <img
-              className="notion-emoji"
-              src={emojis.githubEmoji}
-              alt="github"
-            />
-            <a
-              href="https://github.com/fernan-x"
-              target="_blank"
-              rel="noreferrer"
-              className="notion-link"
-            >
-              Github
-            </a>
-          </div>
-        </div>
-        <div className="notion-divider"></div>
-        <h2>🛠 Skills</h2>
-        <div className="notion-divider"></div>
-        <h2>👩🏻‍💻 Work Experience</h2>
-        <div className="notion-divider"></div>
-        <h2>🗣 Languages</h2>
-        <div className="notion-bloc">
-          <div>
-            <span className="notion-emoji">🇫🇷</span> French (native)
-          </div>
-          <div>
-            <span className="notion-emoji">🇬🇧</span> English (profesional)
-          </div>
-        </div>
-        <div className="notion-bloc">
-          <div>
-            <span className="notion-emoji">🇦🇪</span> Arabic (Beginer)
-          </div>
-          <div>
-            <span className="notion-emoji">👌</span> LSF (Beginer)
-          </div>
-        </div>
-      </div>
+      <div className="notion__content">{displayContent()}</div>
     </div>
   );
 };
