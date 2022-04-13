@@ -10,7 +10,7 @@ import NotionProjectPage from "./NotionProjectPage";
 const Notion = () => {
   const { t } = useTranslation(["app"]);
 
-  const [currentPage, setCurrentPage] = useState("project");
+  const [currentPage, setCurrentPage] = useState("main");
   const [backHistory, setBackHistory] = useState([]);
   const [nextHistory, setNextHistory] = useState([]);
 
