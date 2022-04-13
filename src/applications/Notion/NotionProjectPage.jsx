@@ -1,7 +1,5 @@
 import React from "react";
 
-import { emojis } from "../../constants/images";
-
 const NotionProjectPage = () => {
   return (
     <>
