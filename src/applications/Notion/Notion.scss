@@ -1,0 +1,159 @@
+$color-gray: #8f8e8a;
+$color-text-light: #37352f;
+$color-text-dark: #ebebeb;
+$gutter: 7rem;
+
+.notion {
+  width: 100%;
+  height: 100%;
+
+  color: $color-text-light;
+}
+
+.notion__header {
+  position: relative;
+}
+
+.notion__header-navigation {
+  height: 35px;
+  display: flex;
+  align-items: center;
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    margin: 0 0.4rem;
+
+    .arrow__back,
+    .arrow__next {
+      margin: 0 0.2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.disabled {
+        opacity: 0.5;
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+
+    .breadcrumb__item {
+      padding: 0.2rem;
+      &:hover {
+        cursor: pointer;
+        background-color: #8f8e8a47;
+        border-radius: 5px;
+      }
+    }
+
+    .breadcrumb__separator {
+      color: $color-gray;
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+.notion__header-banner {
+  background: #ed4264; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffedbc,
+    #ed4264
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffedbc,
+    #ed4264
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height: 175px;
+}
+
+.notion__header-picture {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+
+  bottom: -30px;
+  left: $gutter;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img,
+  span {
+    width: 120px;
+    height: 120px;
+    font-size: 110px;
+  }
+}
+
+/**
+ * Notion components
+ */
+.notion__content {
+  margin: 4rem $gutter;
+}
+
+.notion-quote {
+  border-left: solid 3px $color-text-light;
+  padding-left: 1.5rem;
+}
+
+.notion-bloc {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+
+  & div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.notion-divider {
+  height: 1px;
+  width: 100%;
+  background-color: $color-gray;
+  margin: 1.5rem 0;
+}
+
+.notion-emoji {
+  margin-right: 0.6rem;
+}
+
+img.notion-emoji {
+  width: 15px;
+}
+
+.notion-link {
+  color: inherit;
+  border-bottom: 1px solid $color-gray;
+  text-decoration: none;
+  &:hover {
+    color: rgba(235, 235, 235, 0.8);
+  }
+}
+
+/**
+ * Manage dark theme
+ */
+.dark {
+  .notion {
+    color: $color-text-dark;
+  }
+
+  .notion-quote {
+    border-left: solid 3px $color-text-dark;
+  }
+}

@@ -11,7 +11,7 @@ const Construction = () => {
 
   return (
     <div className="construction">
-      <Player src={file} autoplay loop className="construction__image"></Player>
+      <Player src={file} autoplay className="construction__image"></Player>
       <span className="construction__label">
         {t("common:under-construction")}
       </span>
