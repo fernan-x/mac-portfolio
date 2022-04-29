@@ -18,5 +18,14 @@
   "settings-landscape": "Paysage",
   "settings-language": "Langue",
   "notion-main-title": "Fabien Fernandes Alves",
-  "notion-project-title": "Projets"
+  "notion-project-title": "Projets",
+  "notion-experience-title": "Expèriences professionelles",
+  "notion-personal-info": "Informations personnelles",
+  "notion-description": "Je suis un développeur fullstack français 🇫🇷. Amoureux des nouvelles technologies & passionné, je passe beaucoup de temps à développer toutes sortes d'applications. Diplomé d'Epitech Nantes, j'ai passé 1 an d'étude à Bahreïn 🎓.",
+  "notion-languages": "Langues",
+  "notion-french": "Français (natif)",
+  "notion-english": "Anglais (professionnel)",
+  "notion-arabic": "Arabe (débutant)",
+  "notion-lsf": "LSF (débutant)",
+  "notion-journey": "Mon parcours"
 }

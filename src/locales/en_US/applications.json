@@ -18,5 +18,14 @@
   "settings-landscape": "Landscape",
   "settings-language": "Language",
   "notion-main-title": "Fabien Fernandes Alves",
-  "notion-project-title": "Projects"
+  "notion-project-title": "Projects",
+  "notion-experience-title": "Work experiences",
+  "notion-personal-info": "Personal informations",
+  "notion-description": "I'm a french fullstack developer 🇫🇷. Tech lover & passionnate, I spend lot of time developping all kind of applications. Gratuated at Epitech Nantes, I've spend 1 year studying in Bahrein 🎓.",
+  "notion-languages": "Languages",
+  "notion-french": "French (native)",
+  "notion-english": "English (profesional)",
+  "notion-arabic": "Arabic (beginer)",
+  "notion-lsf": "LSF (beginer)",
+  "notion-journey": "My journey"
 }

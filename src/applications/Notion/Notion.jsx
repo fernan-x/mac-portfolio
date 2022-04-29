@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
 import NotionMainPage from "./NotionMainPage";
 import NotionProjectPage from "./NotionProjectPage";
+import NotionExperiencePage from "./NotionExperiencePage";
 
 const Notion = () => {
   const { t } = useTranslation(["app"]);
@@ -19,24 +20,20 @@ const Notion = () => {
       title: t("app:notion-main-title"),
       icon: <img src={fabien} alt="fabien" className="notion-emoji" />,
       breadcrumb: ["main"],
-      content: <NotionMainPage />,
       headerPicture: <img src={fabien} alt="fabien" />,
     },
     project: {
       title: t("app:notion-project-title"),
       icon: <span className="notion-emoji">📜</span>,
       breadcrumb: ["main", "project"],
-      content: <NotionProjectPage />,
       headerPicture: <span>📜</span>,
     },
-  };
-
-  const displayContent = () => {
-    return pages[currentPage].content;
-  };
-
-  const displayHeaderPicture = () => {
-    return pages[currentPage].headerPicture;
+    experience: {
+      title: t("app:notion-experience-title"),
+      icon: <span className="notion-emoji">👩🏻‍💻</span>,
+      breadcrumb: ["main", "experience"],
+      headerPicture: <span>👩🏻‍💻</span>,
+    },
   };
 
   const changePage = (page) => {
@@ -44,6 +41,22 @@ const Notion = () => {
       addHistory(currentPage);
       setCurrentPage(page);
     }
+  };
+
+  const displayContent = () => {
+    switch (currentPage) {
+      case "experience":
+        return <NotionExperiencePage changePage={changePage} />;
+      case "project":
+        return <NotionProjectPage changePage={changePage} />;
+      case "main":
+      default:
+        return <NotionMainPage changePage={changePage} />;
+    }
+  };
+
+  const displayHeaderPicture = () => {
+    return pages[currentPage].headerPicture;
   };
 
   const addHistory = (page) => {
