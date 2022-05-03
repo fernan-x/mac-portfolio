@@ -5,65 +5,65 @@ import soprasteria from "../../assets/images/soprasteria.jpeg";
 
 const experiences = [
   {
-    title: "Full Stack lead developer PHP & React.JS",
+    title: "notion-exp1-title",
     company: "Code 42",
     location: "Nantes",
     date: "09/2020 - present",
     missions: [
-      "Leading a team of 5 developers",
-      "Project management / technical architecture",
-      "On demand software development",
-      "Development processes creation",
-      "Documentations and training creation",
+      "notion-exp1-mission1",
+      "notion-exp1-mission2",
+      "notion-exp1-mission3",
+      "notion-exp1-mission4",
+      "notion-exp1-mission5",
     ],
     image: code42,
   },
   {
-    title: "Full Stack Java developer",
+    title: "notion-exp2-title",
     company: "Sopra Steria",
     location: "Nantes",
     date: "03/2020 - 09/2020",
     missions: [
-      "French criminal record redesign",
-      "Work on a team composed of 100 developers",
-      "Adaptation to the environment in full remote context",
+      "notion-exp2-mission1",
+      "notion-exp2-mission2",
+      "notion-exp2-mission3",
     ],
     image: soprasteria,
   },
   {
-    title: "Full Stack PHP developer (Part time)",
+    title: "notion-exp3-title",
     company: "Code 42",
     location: "Nantes",
     date: "09/2019 - 02/2020",
-    missions: ["Company management software"],
+    missions: ["notion-exp3-mission1"],
     image: code42,
   },
   {
-    title: "Freelance Full Stack PHP developer",
+    title: "notion-exp4-title",
     company: "Code 42 / Graslin Immobilier",
     location: "Bahrain",
     date: "2018 - 2020",
     missions: [
-      "Property management software",
-      "Self employed company management",
-      "Customer relationship",
+      "notion-exp4-mission1",
+      "notion-exp4-mission2",
+      "notion-exp4-mission3",
     ],
     image: code42,
   },
   {
-    title: "Intern PHP / Laravel developer",
+    title: "notion-exp5-title",
     company: "Code 42",
     location: "Nantes",
     date: "04/2018 - 07/2018",
-    missions: [],
+    missions: ["notion-exp3-mission1"],
     image: code42,
   },
   {
-    title: "Intern PHP developer",
+    title: "notion-exp6-title",
     company: "Code 42",
     location: "Nantes",
     date: "09/2016 - 12/2016",
-    missions: [],
+    missions: ["notion-exp3-mission1"],
     image: code42,
   },
 ];
@@ -80,14 +80,14 @@ const NotionExperiencePage = () => {
               <img src={experience.image} alt={experience.title} />
             </div>
             <div className="notion-preview__text">
-              <h2>{experience.title}</h2>
+              <h2>{t(experience.title)}</h2>
               <span className="notion-subtitle">
                 <b>{experience.company}</b>, {experience.location} -{" "}
                 {experience.date}
               </span>
               <ul>
                 {experience.missions.map((mission, index) => (
-                  <li key={index}>{mission}</li>
+                  <li key={index}>{t(mission)}</li>
                 ))}
               </ul>
             </div>
