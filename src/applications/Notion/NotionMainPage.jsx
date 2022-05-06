@@ -53,6 +53,14 @@ const NotionMainPage = ({ changePage }) => {
       <h2>🚀 {t("app:notion-journey")}</h2>
       <div className="notion-bloc">
         <div>
+          <span className="notion-emoji">📚</span>
+          <span className="notion-link" onClick={() => changePage("education")}>
+            {t("app:notion-education-title")}
+          </span>
+        </div>
+      </div>
+      <div className="notion-bloc">
+        <div>
           <span className="notion-emoji">👩🏻‍💻</span>
           <span
             className="notion-link"

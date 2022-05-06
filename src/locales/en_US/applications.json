@@ -45,5 +45,12 @@
   "notion-exp4-mission2": "Self employed company management",
   "notion-exp4-mission3": "Customer relationship",
   "notion-exp5-title": "Intern PHP / Laravel developer",
-  "notion-exp6-title": "Intern PHP developer"
+  "notion-exp6-title": "Intern PHP developer",
+  "notion-education-title": "Education",
+  "notion-education1-title": "Master degree in Information Technology",
+  "notion-education1-school": "Epitech",
+  "notion-education1-location": "Nantes",
+  "notion-education2-title": "Fourth year studying abroad",
+  "notion-education2-school": "Ahlia University",
+  "notion-education2-location": "Bahrein"
 }

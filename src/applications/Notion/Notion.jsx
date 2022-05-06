@@ -7,6 +7,7 @@ import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
 import NotionMainPage from "./NotionMainPage";
 import NotionProjectPage from "./NotionProjectPage";
 import NotionExperiencePage from "./NotionExperiencePage";
+import NotionEducationPage from "./NotionEducationPage";
 
 const Notion = () => {
   const { t } = useTranslation(["app"]);
@@ -34,6 +35,12 @@ const Notion = () => {
       breadcrumb: ["main", "experience"],
       headerPicture: <span>👩🏻‍💻</span>,
     },
+    education: {
+      title: t("app:notion-education-title"),
+      icon: <span className="notion-emoji">📚</span>,
+      breadcrumb: ["main", "education"],
+      headerPicture: <span>📚</span>,
+    },
   };
 
   const changePage = (page) => {
@@ -49,6 +56,8 @@ const Notion = () => {
         return <NotionExperiencePage changePage={changePage} />;
       case "project":
         return <NotionProjectPage changePage={changePage} />;
+      case "education":
+        return <NotionEducationPage changePage={changePage} />;
       case "main":
       default:
         return <NotionMainPage changePage={changePage} />;

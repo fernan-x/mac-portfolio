@@ -45,5 +45,12 @@
   "notion-exp4-mission2": "Gestion de mon auto-entreprise",
   "notion-exp4-mission3": "Relationnel client",
   "notion-exp5-title": "Stagiaire développeur PHP / Laravel",
-  "notion-exp6-title": "Stagiaire développeur PHP"
+  "notion-exp6-title": "Stagiaire développeur PHP",
+  "notion-education-title": "Formation",
+  "notion-education1-title": "Master en technologie de l'information",
+  "notion-education1-school": "Epitech",
+  "notion-education1-location": "Nantes",
+  "notion-education2-title": "Quatrième année d'étude à l'étranger",
+  "notion-education2-school": "Ahlia University",
+  "notion-education2-location": "Bahreïn"
 }
