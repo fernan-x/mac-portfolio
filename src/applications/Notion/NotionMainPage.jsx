@@ -78,6 +78,30 @@ const NotionMainPage = ({ changePage }) => {
       </div>
 
       <div className="notion-divider"></div>
+      <h2>💻 {t("app:notion-skills")}</h2>
+      <div className="notion-bloc">
+        <div>
+          <ul>
+            <li>PHP / Laravel</li>
+            <li>React JS</li>
+            <li>CSS / SCSS</li>
+            <li>Javascript / Typescript</li>
+            <li>HTML</li>
+            <li>C / C++</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Git</li>
+            <li>Ansible / Gitlab CI</li>
+            <li>Docker</li>
+            <li>Bash</li>
+            <li>Scrum</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="notion-divider"></div>
       <h2>🗣 {t("app:notion-languages")}</h2>
       <div className="notion-bloc">
         <div>
