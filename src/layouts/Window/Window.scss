@@ -5,13 +5,18 @@
   width: calc(100% - 2px) !important;
   height: calc(100% - 80px - 33px) !important;
   transform: translate(0, 30px) !important;
+  transition: height 0.3s ease, width 0.3s ease, transform 0.3s ease;
 }
 
-.draggable-closed {
-  display: none !important; // Overwrite the display of draggable window
+.draggable-closing {
+  animation-name: closeWindow !important;
+  animation-duration: 0.3s;
 }
 
 .window {
+  animation-name: displayWindow;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
   background-color: $color-light-background;
   border: 0.5px solid rgba(0, 0, 0, 0.12);
   position: absolute;
@@ -115,5 +120,29 @@
   .window__content,
   .window__footer {
     background-color: $color-dark-background;
+  }
+}
+
+@keyframes displayWindow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes closeWindow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
   }
 }
