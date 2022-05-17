@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Rnd } from "react-rnd";
 import "./Window.scss";
 
@@ -22,8 +22,17 @@ const Window = ({
   };
   const [isFullscreen, setFullscreen] = useState(false);
 
+  const ref = useRef(null);
+
   const closeWindow = () => {
-    closeApplication();
+    // Delay closing the window to allow the animation to finish
+    let animationTimeout = setTimeout(() => {
+      closeApplication();
+      clearTimeout(animationTimeout);
+    }, 500);
+
+    // Add class to animate closing
+    ref.current.className = "window draggable-closing";
   };
 
   const handleClick = () => {
@@ -66,7 +75,7 @@ const Window = ({
       onDrag={handleDrag}
       onResize={handleResize}
     >
-      <div className="window">
+      <div className="window" ref={ref}>
         <div className="window__header">
           <div className="window__header-buttons">
             <button className="close" onClick={closeWindow}></button>

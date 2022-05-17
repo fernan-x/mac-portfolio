@@ -34,6 +34,7 @@ body {
 
 body .desktop-app {
   height: 100%;
+  transition: background-image 200ms ease-in;
 
   &.bg-colorful {
     background: url("../../assets/images/light-colorful.jpeg") no-repeat center;

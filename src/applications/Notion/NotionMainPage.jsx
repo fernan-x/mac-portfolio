@@ -1,18 +1,17 @@
 import React from "react";
 
 import { emojis } from "../../constants/images";
+import { useTranslation } from "react-i18next";
 
-const NotionMainPage = () => {
+const NotionMainPage = ({ changePage }) => {
+  const { t } = useTranslation(["app"]);
+
   return (
     <>
       <h1>Fabien Fernandes Alves</h1>
-      <p className="notion-quote">
-        I'm a french fullstack developer 🇫🇷. Tech lover & passionnate, I spend
-        lot of time developping all kind of applications. Gratuated at Epitech
-        Nantes, I've spend 1 year studying in Bahrein 🎓.
-      </p>
+      <p className="notion-quote">{t("app:notion-description")}</p>
       <br />
-      <h2>☎️ Personal informations</h2>
+      <h2>☎️ {t("app:notion-personal-info")}</h2>
       <div className="notion-bloc">
         <div>
           <span className="notion-emoji">📧</span>
@@ -51,25 +50,73 @@ const NotionMainPage = () => {
         </div>
       </div>
       <div className="notion-divider"></div>
-      <h2>🛠 Skills</h2>
-      <div className="notion-divider"></div>
-      <h2>👩🏻‍💻 Work Experience</h2>
-      <div className="notion-divider"></div>
-      <h2>🗣 Languages</h2>
+      <h2>🚀 {t("app:notion-journey")}</h2>
       <div className="notion-bloc">
         <div>
-          <span className="notion-emoji">🇫🇷</span> French (native)
-        </div>
-        <div>
-          <span className="notion-emoji">🇬🇧</span> English (profesional)
+          <span className="notion-emoji">📚</span>
+          <span className="notion-link" onClick={() => changePage("education")}>
+            {t("app:notion-education-title")}
+          </span>
         </div>
       </div>
       <div className="notion-bloc">
         <div>
-          <span className="notion-emoji">🇦🇪</span> Arabic (Beginer)
+          <span className="notion-emoji">👩🏻‍💻</span>
+          <span
+            className="notion-link"
+            onClick={() => changePage("experience")}
+          >
+            {t("app:notion-experience-title")}
+          </span>
         </div>
         <div>
-          <span className="notion-emoji">👌</span> LSF (Beginer)
+          <span className="notion-emoji">📜</span>
+          <span className="notion-link" onClick={() => changePage("project")}>
+            {t("app:notion-project-title")}
+          </span>
+        </div>
+      </div>
+
+      <div className="notion-divider"></div>
+      <h2>💻 {t("app:notion-skills")}</h2>
+      <div className="notion-bloc">
+        <div>
+          <ul>
+            <li>PHP / Laravel</li>
+            <li>React JS</li>
+            <li>CSS / SCSS</li>
+            <li>Javascript / Typescript</li>
+            <li>HTML</li>
+            <li>C / C++</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Git</li>
+            <li>Ansible / Gitlab CI</li>
+            <li>Docker</li>
+            <li>Bash</li>
+            <li>Scrum</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="notion-divider"></div>
+      <h2>🗣 {t("app:notion-languages")}</h2>
+      <div className="notion-bloc">
+        <div>
+          <span className="notion-emoji">🇫🇷</span> {t("app:notion-french")}
+        </div>
+        <div>
+          <span className="notion-emoji">🇬🇧</span> {t("app:notion-english")}
+        </div>
+      </div>
+      <div className="notion-bloc">
+        <div>
+          <span className="notion-emoji">🇦🇪</span> {t("app:notion-arabic")}
+        </div>
+        <div>
+          <span className="notion-emoji">👌</span> {t("app:notion-lsf")}
         </div>
       </div>
     </>

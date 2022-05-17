@@ -141,7 +141,41 @@ img.notion-emoji {
   border-bottom: 1px solid $color-gray;
   text-decoration: none;
   &:hover {
+    cursor: pointer;
     color: rgba(235, 235, 235, 0.8);
+  }
+}
+
+.notion-subtitle {
+  color: $color-gray;
+  font-style: italic;
+}
+
+.notion-preview {
+  display: flex;
+  align-items: center;
+
+  .notion-preview__image {
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      max-height: 200px;
+    }
+  }
+
+  .notion-preview__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 1em;
+    padding: 1em;
   }
 }
 
