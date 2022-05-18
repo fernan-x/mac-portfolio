@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import fabien from "../../assets/images/fabien.png";
+import Image from "../../components/Core/Image";
 import "./About.scss";
 
 const About = () => {
@@ -11,7 +12,7 @@ const About = () => {
   return (
     <div className="about">
       <div className="about__picture">
-        <img src={fabien} alt="fabien" />
+        <Image src={fabien} alt="fabien" />
       </div>
       <div className="about__description">
         <div className="about__description-header">
