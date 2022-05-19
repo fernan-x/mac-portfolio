@@ -1,6 +1,6 @@
 import React from "react";
 import "./Dock.scss";
-import constants from "../../constants/constants.js";
+import constants from "../../constants/constants.jsx";
 
 // TODO : how to handle remove active
 const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
