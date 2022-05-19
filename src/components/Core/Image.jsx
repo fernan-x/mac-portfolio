@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Skeleton from "./Skeleton/Skeleton";
 
 const Image = (props) => {
   const { src, ref, alt, style = {} } = props;
@@ -6,12 +7,12 @@ const Image = (props) => {
 
   return (
     <>
-      {isLoading ? <>loading</> : null}
+      {isLoading ? <Skeleton /> : null}
       <img
         src={src}
         ref={ref}
         alt={alt}
-        //onLoad={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
         style={isLoading ? { display: "none" } : style}
       />
     </>
