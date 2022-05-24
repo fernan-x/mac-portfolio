@@ -1,7 +1,8 @@
 import React from "react";
-import { useConfiguration } from "../../context/ConfigurationContext";
 import { useTranslation } from "react-i18next";
 import { desktopImages } from "../../constants/images";
+import { useDispatch, useSelector } from "react-redux";
+import { setBackground, setTheme } from "../../store/configurationSlice";
 import Divider from "../../components/Desktop/Divider/Divider";
 import BigSurSelect from "../../components/Desktop/BigSurSelect/BigSurSelect";
 
@@ -14,25 +15,12 @@ import i18n from "../../services/translation";
 import "./Settings.scss";
 
 const Settings = () => {
-  const { setTheme, darkTheme, colorfulBackground, setBackground } =
-    useConfiguration();
   const { t } = useTranslation(["app"]);
-
-  const handleLightThemeClick = () => {
-    setTheme("light");
-  };
-
-  const handleDarkThemeClick = () => {
-    setTheme("dark");
-  };
-
-  const handleColorfulBackgroundClick = () => {
-    setBackground("colorful");
-  };
-
-  const handleLandscapeBackgroundClick = () => {
-    setBackground("landscape");
-  };
+  const dispatch = useDispatch();
+  const darkTheme = useSelector((state) => state.configuration.darkTheme);
+  const colorfulBackground = useSelector(
+    (state) => state.configuration.colorfulBackground
+  );
 
   const changeLanguage = (e) => {
     if (i18n.language !== e.target.value) {
@@ -52,7 +40,9 @@ const Settings = () => {
               <img
                 src={desktopImages.lightToggle}
                 alt="toggle light"
-                onClick={handleLightThemeClick}
+                onClick={() => {
+                  dispatch(setTheme("light"));
+                }}
                 className={`entry-card_image${!darkTheme ? " active" : ""}`}
               />
               <span className="text__default">{t("app:settings-light")}</span>
@@ -62,7 +52,9 @@ const Settings = () => {
               <img
                 src={desktopImages.darkToggle}
                 alt="toggle dark"
-                onClick={handleDarkThemeClick}
+                onClick={() => {
+                  dispatch(setTheme("dark"));
+                }}
                 className={`entry-card_image${darkTheme ? " active" : ""}`}
               />
               <span className="text__default">{t("app:settings-dark")}</span>
@@ -79,7 +71,9 @@ const Settings = () => {
               <img
                 src={darkTheme ? colorfulDark : colorful}
                 alt="toggle colorful"
-                onClick={handleColorfulBackgroundClick}
+                onClick={() => {
+                  dispatch(setBackground("colorful"));
+                }}
                 className={`entry-card_image${
                   colorfulBackground ? " active" : ""
                 }`}
@@ -93,7 +87,9 @@ const Settings = () => {
               <img
                 src={darkTheme ? landscapeDark : landscape}
                 alt="toggle landscape"
-                onClick={handleLandscapeBackgroundClick}
+                onClick={() => {
+                  dispatch(setBackground("landscape"));
+                }}
                 className={`entry-card_image${
                   !colorfulBackground ? " active" : ""
                 }`}
