@@ -18,7 +18,10 @@ const Window = ({
 }) => {
   const centerPos = {
     x: window.innerWidth / 2 - width / 2,
-    y: window.innerHeight / 3 - height / 2,
+    y:
+      window.innerHeight / 3 - height / 2 > 30
+        ? window.innerHeight / 3 - height / 2
+        : 30,
   };
   const [isFullscreen, setFullscreen] = useState(false);
 

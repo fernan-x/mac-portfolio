@@ -24,6 +24,7 @@ import darkToggle from "../assets/images/desktop/toggle-theme-dark.png";
 
 import discord from "../assets/images/applications/discord.png";
 import notion from "../assets/images/applications/notion.png";
+import pokedex from "../assets/images/applications/pokedex.png";
 
 import sWallpaper from "../assets/images/smartphone/wallpaper.png";
 import sLock from "../assets/images/smartphone/lock.png";
@@ -49,6 +50,7 @@ export const smartphoneImages = {
 export const appImages = {
   discord,
   notion,
+  pokedex,
 };
 
 export const emojis = {
