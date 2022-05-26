@@ -26,12 +26,9 @@ export const pokedexSlice = createSlice({
         }
       });
     },
-    getPokemon: (state, action) => {
-      return state.pokemonList.filter((elem) => elem.id === action.payload);
-    },
   },
 });
 
-export const { setPokemonList, getPokemon } = pokedexSlice.actions;
+export const { setPokemonList } = pokedexSlice.actions;
 
 export default pokedexSlice.reducer;

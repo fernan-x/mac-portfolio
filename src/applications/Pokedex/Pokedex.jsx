@@ -13,11 +13,13 @@ import pokemonLoader from "../../assets/lotties/pokeball-loading.json";
 import PokemonCard from "./PokemonCard";
 
 import "./Pokedex.scss";
+import PokemonDetail from "./PokemonDetail";
 
 const Pokedex = () => {
   const pokemons = useSelector((state) => state.pokedex.pokemonList);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
+  const [displayPokemon, setDisplayPokemon] = useState(null);
 
   useEffect(() => {
     GraphQLClient.query({
@@ -56,6 +58,11 @@ const Pokedex = () => {
             className="pokedex__loader-lottie"
           ></Player>
         </div>
+      ) : displayPokemon ? (
+        <PokemonDetail
+          id={displayPokemon}
+          handleBack={() => setDisplayPokemon(null)}
+        />
       ) : (
         <div className="pokedex">
           {pokemons &&
@@ -66,6 +73,7 @@ const Pokedex = () => {
                 name={elem.name}
                 image={elem.image}
                 types={elem.types}
+                setDisplayPokemon={setDisplayPokemon}
               />
             ))}
         </div>
