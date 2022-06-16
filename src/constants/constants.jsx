@@ -1,6 +1,7 @@
 import About from "../applications/About/About";
 import Construction from "../applications/Construction/Construction";
 import Notion from "../applications/Notion/Notion";
+import Pokedex from "../applications/Pokedex/Pokedex";
 import Settings from "../applications/Settings/Settings";
 import images from "./images";
 
@@ -69,6 +70,19 @@ const applications = [
     enableResizing: true,
     height: 600,
     width: 800,
+  },
+  {
+    id: "pokedex",
+    name: "Pokedex",
+    component: <Pokedex />,
+    img: images.pokedex,
+    open: false,
+    active: false,
+    docked: true,
+    enableFullscreen: true,
+    enableResizing: true,
+    height: 600,
+    width: 400,
   },
   {
     id: "bin",
