@@ -18,6 +18,8 @@ export const pokedexSlice = createSlice({
           pokemon.id = item.id;
           pokemon.name = item.name;
           pokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+          pokemon.height = item.height;
+          pokemon.weight = item.weight;
           pokemon.types = item.pokemon_v2_pokemontypes.map((type) => {
             return { name: type.pokemon_v2_type.name };
           });

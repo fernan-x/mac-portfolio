@@ -52,6 +52,7 @@ $types: (
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   color: $color-white;
+  font-family: "Poppins";
 }
 
 .pokemon-card {
@@ -105,6 +106,10 @@ $types: (
   position: relative;
   color: $color-white;
 
+  * {
+    font-family: "Poppins";
+  }
+
   & > img {
     position: absolute;
     top: 8px;
@@ -144,6 +149,7 @@ $types: (
 
   .pokemon-detail__content {
     background-color: $color-white;
+    color: $color-dark-gray;
     border-radius: 8px;
     margin: 150px 1px 1px 1px;
   }
@@ -179,4 +185,59 @@ $types: (
   margin: 0 5px;
   padding: 2px 8px;
   text-transform: capitalize;
+}
+
+/* Pokemon overview */
+.pokemon-detail__content-overview {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1rem 2rem;
+
+    &:not(:last-child) {
+      padding-right: 2rem;
+      border-right: 1px solid $color-light-gray;
+    }
+
+    .overview__value {
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      .overview__value-image,
+      .overview__value-number {
+        margin: 0 0.2rem;
+      }
+      .overview__value-number {
+        color: $color-dark-gray;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    .overview__title {
+      color: $color-medium-gray;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}
+
+/* Pokemon description */
+.pokemon-detail__content-description {
+  padding: 0 1.5rem 1rem 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-dark-gray;
 }
