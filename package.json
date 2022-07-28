@@ -20,6 +20,7 @@
     "react-icons": "^4.3.1",
     "react-redux": "^8.0.2",
     "react-rnd": "^10.3.7",
+    "react-swipeable": "^7.0.0",
     "sass": "^1.49.9",
     "vite": "^2.9.9",
     "vite-plugin-svgr": "^2.1.0",

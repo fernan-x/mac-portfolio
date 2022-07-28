@@ -3,6 +3,8 @@ import moment from "moment";
 import { StatusBar } from "./components/Smartphone";
 import Footer from "./components/Smartphone/Footer/Footer";
 import LockScreen from "./components/Smartphone/LockScreen/LockScreen";
+import AppTest from "./components/Smartphone/AppTest/AppTest";
+import ApplicationContainer from "./components/Smartphone/ApplicationContainer/ApplicationContainer";
 
 const SmartphoneApp = () => {
   const [date, setDate] = useState("6:34");
@@ -26,6 +28,10 @@ const SmartphoneApp = () => {
       <StatusBar hour={hour} />
       <LockScreen hour={hour} date={date} />
       <Footer />
+      <AppTest />
+      <ApplicationContainer>Application 3</ApplicationContainer>
+      <ApplicationContainer>Application 2</ApplicationContainer>
+      <ApplicationContainer>Application 1</ApplicationContainer>
     </div>
   );
 };
