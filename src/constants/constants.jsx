@@ -3,13 +3,14 @@ import Construction from "../applications/Construction/Construction";
 import Notion from "../applications/Notion/Notion";
 import Pokedex from "../applications/Pokedex/Pokedex";
 import Settings from "../applications/Settings/Settings";
+import ThreeJs from "../applications/ThreeJs/ThreeJs";
 import images from "./images";
 
 const applications = [
   {
     id: "finder",
     name: "Finder",
-    component: <Construction />,
+    component: <ThreeJs />,
     img: images.finder,
     open: false,
     active: false,
