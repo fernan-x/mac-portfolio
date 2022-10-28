@@ -1,4 +1,13 @@
 {
+  "title-welcome": "Bienvenue",
+  "title-finder": "Finder",
+  "title-launchpad": "Launchpad",
+  "title-settings": "Préférences Système",
+  "title-notes": "Notes",
+  "title-notion": "Notion",
+  "title-pokedex": "Pokédex",
+  "title-bin": "Corbeille",
+  "title-about": "À propos",
   "about-job": "Développeur Fullstack PHP / React",
   "about-age": "Age",
   "about-mail": "Adresse email",

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Rnd } from "react-rnd";
 import "./Window.scss";
 
@@ -26,6 +27,7 @@ const Window = ({
   const [isFullscreen, setFullscreen] = useState(false);
 
   const ref = useRef(null);
+  const {t} = useTranslation(["app"]);
 
   const closeWindow = () => {
     // Delay closing the window to allow the animation to finish
@@ -92,7 +94,7 @@ const Window = ({
               <button></button>
             )}
           </div>
-          <div className="window__header-title">{name}</div>
+          <div className="window__header-title">{t(`app:${name}`)}</div>
         </div>
         <div className="window__content">{children}</div>
         <div className="window__footer">{footer}</div>

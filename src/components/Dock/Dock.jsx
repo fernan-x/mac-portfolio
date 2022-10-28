@@ -1,9 +1,11 @@
 import React from "react";
 import "./Dock.scss";
 import constants from "../../constants/constants.jsx";
+import { useTranslation } from "react-i18next";
 
 // TODO : how to handle remove active
 const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
+  const {t} = useTranslation(['app']);
   const resize = (e, idx) => {
     let icons = document.querySelectorAll(".ico");
     const elem = e.target;
@@ -55,7 +57,7 @@ const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
       }`}
       onClick={setActive}
     >
-      <div className="name">{name}</div>
+      <div className="name">{t(`app:${name}`)}</div>
       <img
         src={img}
         alt={name}
