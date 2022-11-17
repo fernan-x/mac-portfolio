@@ -17,8 +17,8 @@ const applications = [
     docked: false,
     enableFullscreen: true,
     enableResizing: false,
-    height: 500,
-    width: 800,
+    height: 700,
+    width: 700,
   },
   {
     id: "finder",
