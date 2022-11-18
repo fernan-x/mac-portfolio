@@ -1,5 +1,5 @@
 {
-  "title-welcome": "Welcome",
+  "title-welcome": "News",
   "title-finder": "Finder",
   "title-launchpad": "Launchpad",
   "title-settings": "Settings",
@@ -63,6 +63,7 @@
   "notion-education2-school": "Ahlia University",
   "notion-education2-location": "Bahrein",
   "notion-skills": "Skills",
+  "onboarding-welcome": "Welcome on my portfolio",
   "pokemon-about": "About",
   "pokemon-weight": "Weight",
   "pokemon-height": "Height",

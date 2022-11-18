@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 // TODO : how to handle remove active
 const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
-  const {t} = useTranslation(['app']);
+  const { t } = useTranslation(["app"]);
   const resize = (e, idx) => {
     let icons = document.querySelectorAll(".ico");
     const elem = e.target;
@@ -81,7 +81,7 @@ const Dock = ({ openApplication }) => {
                 name={entry.name}
                 img={entry.img}
                 key={idx + 1}
-                index={idx + 1}
+                index={idx}
                 last={entry.last}
                 active={entry.active}
                 openApplication={openApplication}

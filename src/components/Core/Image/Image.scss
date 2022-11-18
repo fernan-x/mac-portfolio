@@ -1,0 +1,19 @@
+@import "../../../assets/styles/colors";
+
+img.image-component {
+  &.variant-rounded {
+    border: 8px solid $color-light-primary;
+    border-radius: 50%;
+  }
+}
+
+/**
+ * Dark theme
+ */
+.dark {
+  img.image-component {
+    &.variant-rounded {
+      border-color: $color-dark-primary;
+    }
+  }
+}

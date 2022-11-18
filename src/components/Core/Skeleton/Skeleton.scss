@@ -5,6 +5,9 @@
   animation: 1.5s shine linear infinite;
   min-height: 150px;
   min-width: 150px;
+  &.variant-rounded {
+    border-radius: 50%;
+  }
 }
 
 @keyframes shine {
