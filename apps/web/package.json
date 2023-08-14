@@ -6,6 +6,7 @@
     "@apollo/client": "^3.6.5",
     "@lottiefiles/react-lottie-player": "^3.4.4",
     "@reduxjs/toolkit": "^1.8.1",
+    "@shad-ui/react-big-sur": "*",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
@@ -26,7 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
