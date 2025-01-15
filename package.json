@@ -31,7 +31,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "predeploy": "yarn build --base=/mac-portfolio/",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --repo https://x-access-token:${GITHUB_TOKEN}@github.com/fernan-x/mac-portfolio.git"
   },
   "eslintConfig": {
     "extends": [
