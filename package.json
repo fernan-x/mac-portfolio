@@ -1,7 +1,8 @@
 {
   "name": "mac-portfolio",
-  "version": "1.0.00",
+  "version": "2.0.0",
   "private": true,
+  "homepage": "https://fernan-x.github.io/mac-portfolio",
   "dependencies": {
     "@apollo/client": "^3.6.5",
     "@lottiefiles/react-lottie-player": "^3.4.4",
@@ -28,7 +29,9 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy": "yarn build --base=/mac-portfolio/",
+    "deploy": "gh-pages -d dist --repo https://x-access-token:${GITHUB_TOKEN}@github.com/fernan-x/mac-portfolio.git"
   },
   "eslintConfig": {
     "extends": [
@@ -36,16 +39,7 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
