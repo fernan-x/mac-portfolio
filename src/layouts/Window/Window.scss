@@ -1,4 +1,4 @@
-@import "../../assets/styles/colors";
+@use "../../assets/styles/colors";
 
 .draggable-fullscreen {
   // Overwrite the draggable window props
@@ -17,7 +17,7 @@
   animation-name: displayWindow;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
-  background-color: $color-light-background;
+  background-color: colors.$color-light-background;
   border: 0.5px solid rgba(0, 0, 0, 0.12);
   position: absolute;
   display: flex;
@@ -58,7 +58,7 @@
   font-size: 13px;
   line-height: 16px;
   letter-spacing: -0.004em;
-  color: $color-light-primary;
+  color: colors.$color-light-primary;
 }
 
 .window__header-buttons {
@@ -71,16 +71,16 @@
     border: none;
 
     &.fullscreen {
-      background-color: $color-light-green;
+      background-color: colors.$color-light-green;
     }
     &.close {
-      background-color: $color-light-red;
+      background-color: colors.$color-light-red;
     }
   }
 }
 
 .window__content {
-  background-color: $color-light-background-inactive;
+  background-color: colors.$color-light-background-inactive;
   flex-grow: 1;
   height: calc(
     100% - 25px - 28px - 0.4rem
@@ -91,7 +91,7 @@
 
 .window__footer {
   height: 28px;
-  background-color: $color-light-background-inactive;
+  background-color: colors.$color-light-background-inactive;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -105,21 +105,21 @@
   }
 
   .window__header-title {
-    color: $color-dark-secondary;
+    color: colors.$color-dark-secondary;
   }
 
   .window__header-buttons {
     .fullscreen {
-      background-color: $color-dark-green;
+      background-color: colors.$color-dark-green;
     }
     .close {
-      background-color: $color-dark-red;
+      background-color: colors.$color-dark-red;
     }
   }
 
   .window__content,
   .window__footer {
-    background-color: $color-dark-background;
+    background-color: colors.$color-dark-background;
   }
 }
 

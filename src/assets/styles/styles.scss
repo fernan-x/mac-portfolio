@@ -1,4 +1,4 @@
-@import "./colors";
+@use "./colors";
 
 * {
   font-family: "SF Pro", "San Francisco";
@@ -12,7 +12,7 @@ body,
   padding: 0;
   height: 100%;
   font-family: "SF Pro", "San Francisco";
-  color: $color-light-primary;
+  color: colors.$color-light-primary;
 }
 
 @font-face {
@@ -103,7 +103,7 @@ body .smartphone-app.locked {
  * Dark theme
  */
 .dark {
-  color: $color-dark-primary;
+  color: colors.$color-dark-primary;
 
   .desktop-app {
     &.bg-colorful {

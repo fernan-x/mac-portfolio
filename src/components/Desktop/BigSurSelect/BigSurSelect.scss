@@ -1,4 +1,4 @@
-@import "../../../assets/styles/colors";
+@use "../../../assets/styles/colors";
 
 .bs-select {
   position: relative;
@@ -6,8 +6,8 @@
   select {
     padding: 3px 9px 3px 3px;
 
-    color: $color-light-primary;
-    background: $color-light-background;
+    color: colors.$color-light-primary;
+    background: colors.$color-light-background;
     border: 0.5px solid rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     border-radius: 6px;
@@ -38,7 +38,7 @@
  */
 .dark {
   .bs-select select {
-    color: $color-dark-primary;
+    color: colors.$color-dark-primary;
     background: #6e6d70;
   }
 }

@@ -1,4 +1,4 @@
-@import "../../assets/styles/colors";
+@use "../../assets/styles/colors";
 
 .construction {
   width: 100%;
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
 
-    color: $color-light-primary;
+    color: colors.$color-light-primary;
 
     font-family: "SF Pro Text", "San Francisco";
     font-size: 1.5rem;
@@ -30,6 +30,6 @@
  */
 .dark {
   .construction__label {
-    color: $color-dark-primary;
+    color: colors.$color-dark-primary;
   }
 }
