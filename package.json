@@ -30,7 +30,7 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "predeploy": "yarn build",
+    "predeploy": "yarn build --base=/mac-portfolio/",
     "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
