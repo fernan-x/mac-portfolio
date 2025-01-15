@@ -1,4 +1,4 @@
-@import "../../assets/styles/colors";
+@use "../../assets/styles/colors";
 
 .setting {
   display: flex;
@@ -48,7 +48,7 @@
       border-radius: 10px;
 
       &.active {
-        border: 2px solid $color-light-blue;
+        border: 2px solid colors.$color-light-blue;
       }
 
       &:not(.active) {
@@ -71,6 +71,6 @@
  */
 .dark {
   .entry-card_image.active {
-    border: 2px solid $color-dark-blue;
+    border: 2px solid colors.$color-dark-blue;
   }
 }

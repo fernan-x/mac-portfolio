@@ -1,4 +1,4 @@
-@import "../../assets/styles/colors";
+@use "../../assets/styles/colors";
 
 .about {
   height: 100%;
@@ -31,7 +31,7 @@
   img,
   .skeleton {
     width: 65%;
-    border: 8px solid $color-light-primary;
+    border: 8px solid colors.$color-light-primary;
     border-radius: 50%;
   }
 }
@@ -44,7 +44,7 @@
   justify-content: center;
   flex-direction: column;
 
-  color: $color-light-primary;
+  color: colors.$color-light-primary;
 }
 
 .about__description-header {
@@ -61,12 +61,12 @@
 .dark {
   .about__picture {
     img {
-      border-color: $color-dark-primary;
+      border-color: colors.$color-dark-primary;
     }
   }
 
   .about__description {
-    color: $color-dark-primary;
+    color: colors.$color-dark-primary;
     font-family: "SF Pro Text", "San Francisco";
   }
 }
