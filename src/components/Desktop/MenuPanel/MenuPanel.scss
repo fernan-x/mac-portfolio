@@ -1,4 +1,4 @@
-@import "../../../assets/styles/colors";
+@use "../../../assets/styles/colors";
 
 .menu-panel {
   display: flex;
@@ -29,7 +29,7 @@
   width: calc(100% - 0.8em); // Substract item padding
 
   &:not(:last-of-type) {
-    border-bottom: 1px solid $color-light-quartinerary;
+    border-bottom: 1px solid colors.$color-light-quartinerary;
   }
 }
 
@@ -42,7 +42,7 @@
 
   letter-spacing: -0.25px;
   font-feature-settings: "zero" on;
-  color: $color-light-primary;
+  color: colors.$color-light-primary;
   opacity: 0.9;
 
   margin: 0.2em 0;
@@ -51,12 +51,12 @@
 
   &:hover {
     cursor: default;
-    background: $color-light-blue;
+    background: colors.$color-light-blue;
     color: #ffffff;
   }
 
   &.disabled {
-    color: $color-light-quartinerary;
+    color: colors.$color-light-quartinerary;
 
     &:hover {
       background: none;
@@ -73,19 +73,19 @@
   }
 
   .menu-panel__entries:not(:last-of-type) {
-    border-bottom: 1px solid $color-dark-quartinerary;
+    border-bottom: 1px solid colors.$color-dark-quartinerary;
   }
 
   .menu-panel__entries-label {
-    color: $color-dark-primary;
+    color: colors.$color-dark-primary;
 
     &:hover {
-      background-color: $color-dark-blue;
+      background-color: colors.$color-dark-blue;
       color: default;
     }
 
     &.disabled {
-      color: $color-dark-quartinerary;
+      color: colors.$color-dark-quartinerary;
 
       &:hover {
         background: none;
