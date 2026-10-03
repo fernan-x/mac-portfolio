@@ -4,9 +4,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 /* Redux import */
 import { usePokedexStore } from "../../store/pokedexStore";
 
-/* GraphQL import */
-import GraphQLClient from "../../services/apolloClient";
-import { gql } from "@apollo/client";
+import { fetchPokemons } from "../../services/pokeapi";
 
 import pokemonLoader from "../../assets/lotties/pokeball-loading.json";
 import PokemonCard from "./PokemonCard";
@@ -21,30 +19,9 @@ const Pokedex = () => {
   const [displayPokemon, setDisplayPokemon] = useState(null);
 
   useEffect(() => {
-    GraphQLClient.query({
-      query: gql`
-        query samplePokeAPIquery {
-          pokemon_v2_pokemon(limit: 50) {
-            id
-            name
-            height
-            weight
-            pokemon_v2_pokemontypes {
-              pokemon_v2_type {
-                name
-              }
-            }
-            pokemon_v2_pokemonabilities {
-              pokemon_v2_ability {
-                name
-              }
-            }
-          }
-        }
-      `,
-    })
-      .then((res) => {
-        setPokemonList(res.data.pokemon_v2_pokemon);
+    fetchPokemons()
+      .then((list) => {
+        setPokemonList(list);
         setLoading(false);
       })
       .catch((err) => {

@@ -1,0 +1,38 @@
+const GRAPHQL_URL = "https://beta.pokeapi.co/graphql/v1beta";
+
+const POKEMON_LIST_QUERY = `
+  query samplePokeAPIquery {
+    pokemon_v2_pokemon(limit: 50) {
+      id
+      name
+      height
+      weight
+      pokemon_v2_pokemontypes {
+        pokemon_v2_type {
+          name
+        }
+      }
+      pokemon_v2_pokemonabilities {
+        pokemon_v2_ability {
+          name
+        }
+      }
+    }
+  }
+`;
+
+export const fetchPokemons = async () => {
+  const response = await fetch(GRAPHQL_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: POKEMON_LIST_QUERY }),
+  });
+  if (!response.ok) {
+    throw new Error(`PokeAPI request failed with status ${response.status}`);
+  }
+  const { data, errors } = await response.json();
+  if (errors && errors.length) {
+    throw new Error(errors.map((e) => e.message).join(", "));
+  }
+  return data.pokemon_v2_pokemon;
+};
