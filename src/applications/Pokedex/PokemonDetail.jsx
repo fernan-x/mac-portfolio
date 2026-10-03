@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { useSelector } from "react-redux";
+import { usePokedexStore } from "../../store/pokedexStore";
 import { VscArrowLeft } from "react-icons/vsc";
 
 import pokeball from "../../assets/images/Pokeball.svg";
@@ -11,7 +11,7 @@ import weightLogo from "../../assets/images/applications/weight.png";
 const PokemonDetail = ({ handleBack, id }) => {
   const { t } = useTranslation(["app"]);
 
-  const pokemonList = useSelector((state) => state.pokedex.pokemonList);
+  const pokemonList = usePokedexStore((state) => state.pokemonList);
   const [detail, setDetail] = useState(null);
   const [types, setTypes] = useState([]);
   const [name, setName] = useState("");

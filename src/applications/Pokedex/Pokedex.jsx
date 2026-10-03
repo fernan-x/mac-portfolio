@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 /* Redux import */
-import { useDispatch, useSelector } from "react-redux";
-import { setPokemonList } from "../../store/pokedexSlice";
+import { usePokedexStore } from "../../store/pokedexStore";
 
 /* GraphQL import */
 import GraphQLClient from "../../services/apolloClient";
@@ -16,8 +15,8 @@ import "./Pokedex.scss";
 import PokemonDetail from "./PokemonDetail";
 
 const Pokedex = () => {
-  const pokemons = useSelector((state) => state.pokedex.pokemonList);
-  const dispatch = useDispatch();
+  const pokemons = usePokedexStore((state) => state.pokemonList);
+  const setPokemonList = usePokedexStore((state) => state.setPokemonList);
   const [loading, setLoading] = useState(true);
   const [displayPokemon, setDisplayPokemon] = useState(null);
 
@@ -45,7 +44,7 @@ const Pokedex = () => {
       `,
     })
       .then((res) => {
-        dispatch(setPokemonList(res.data.pokemon_v2_pokemon));
+        setPokemonList(res.data.pokemon_v2_pokemon);
         setLoading(false);
       })
       .catch((err) => {
