@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-/* Redux import */
+/* Store import */
 import { usePokedexStore } from "../../store/pokedexStore";
 
 import { fetchPokemons } from "../../services/pokeapi";
@@ -28,7 +28,7 @@ const Pokedex = () => {
         console.error(err);
         setLoading(false);
       });
-  }, [dispatch]);
+  }, [setPokemonList]);
 
   return (
     <>
