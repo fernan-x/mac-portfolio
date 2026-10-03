@@ -12,14 +12,13 @@ const PokemonDetail = ({ handleBack, id }) => {
   const { t } = useTranslation(["app"]);
 
   const pokemonList = useSelector((state) => state.pokedex.pokemonList);
-  const [detail, setDetail] = useState(null);
   const [types, setTypes] = useState([]);
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
-  const [moves, setMoves] = useState([]);
-  const [description, setDescription] = useState(
+  const [moves] = useState([]);
+  const [description] = useState(
     "Description du pokemon sera ici :D"
   );
 
@@ -27,14 +26,13 @@ const PokemonDetail = ({ handleBack, id }) => {
     const res = pokemonList.filter((elem) => elem.id === id);
     if (res.length > 0) {
       console.log(res[0]);
-      setDetail(res[0]);
       setTypes(res[0].types);
       setName(res[0].name);
       setImage(res[0].image);
       setHeight(res[0].height);
       setWeight(res[0].weight);
     }
-  }, [pokemonList]);
+  }, [pokemonList, id]);
 
   return (
     <div

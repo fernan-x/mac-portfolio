@@ -20,15 +20,26 @@
     "react-rnd": "^10.3.7"
   },
   "devDependencies": {
+    "@eslint/js": "^9",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "12",
     "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "gh-pages": "^6.3.0",
+    "globals": "^17.13.0",
+    "jsdom": "^26",
     "sass": "^1.49.9",
-    "vite": "^6.0.7"
+    "vite": "^6.0.7",
+    "vitest": "^3"
   },
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "lint": "eslint .",
+    "test": "vitest",
     "predeploy": "yarn build --base=/mac-portfolio/",
     "deploy": "gh-pages -d dist --repo https://x-access-token:${GITHUB_TOKEN}@github.com/fernan-x/mac-portfolio.git"
   }

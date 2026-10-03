@@ -40,7 +40,7 @@ const DockEntry = ({ id, index, name, img, last, active, openApplication }) => {
     });
   };
 
-  const setActive = (e) => {
+  const setActive = () => {
     // Launch app
     if (id) {
       openApplication(id);
