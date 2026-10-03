@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-/* Redux import */
-import { useDispatch, useSelector } from "react-redux";
-import { setPokemonList } from "../../store/pokedexSlice";
+/* Store import */
+import { usePokedexStore } from "../../store/pokedexStore";
 
-/* GraphQL import */
-import GraphQLClient from "../../services/apolloClient";
-import { gql } from "@apollo/client";
+import { fetchPokemons } from "../../services/pokeapi";
 
 import pokemonLoader from "../../assets/lotties/pokeball-loading.json";
 import PokemonCard from "./PokemonCard";
@@ -16,43 +13,22 @@ import "./Pokedex.scss";
 import PokemonDetail from "./PokemonDetail";
 
 const Pokedex = () => {
-  const pokemons = useSelector((state) => state.pokedex.pokemonList);
-  const dispatch = useDispatch();
+  const pokemons = usePokedexStore((state) => state.pokemonList);
+  const setPokemonList = usePokedexStore((state) => state.setPokemonList);
   const [loading, setLoading] = useState(true);
   const [displayPokemon, setDisplayPokemon] = useState(null);
 
   useEffect(() => {
-    GraphQLClient.query({
-      query: gql`
-        query samplePokeAPIquery {
-          pokemon_v2_pokemon(limit: 50) {
-            id
-            name
-            height
-            weight
-            pokemon_v2_pokemontypes {
-              pokemon_v2_type {
-                name
-              }
-            }
-            pokemon_v2_pokemonabilities {
-              pokemon_v2_ability {
-                name
-              }
-            }
-          }
-        }
-      `,
-    })
-      .then((res) => {
-        dispatch(setPokemonList(res.data.pokemon_v2_pokemon));
+    fetchPokemons()
+      .then((list) => {
+        setPokemonList(list);
         setLoading(false);
       })
       .catch((err) => {
         console.error(err);
         setLoading(false);
       });
-  }, [dispatch]);
+  }, [setPokemonList]);
 
   return (
     <>
