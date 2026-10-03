@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useConfigurationStore } from "./store/configurationStore";
 
 import Dock from "./components/Dock/Dock";
 import MenuBar from "./components/Desktop/MenuBar/MenuBar";
@@ -15,8 +15,8 @@ const DesktopApp = ({
   setApplicationActive,
 }) => {
   const { t } = useTranslation(["desktop"]);
-  const colorfulBackground = useSelector(
-    (state) => state.configuration.colorfulBackground
+  const colorfulBackground = useConfigurationStore(
+    (state) => state.colorfulBackground
   );
 
   return (

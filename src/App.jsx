@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useConfigurationStore } from "./store/configurationStore";
 
 import constants from "./constants/constants";
 import SmartphoneApp from "./SmartphoneApp";
@@ -12,7 +12,7 @@ function App() {
   const [openedApp, setOpenedApp] = useState(null);
   const [zPosition, setZPosition] = useState({});
   const [maxZ, setMaxZ] = useState(defaultZ);
-  const darkTheme = useSelector((state) => state.configuration.darkTheme);
+  const darkTheme = useConfigurationStore((state) => state.darkTheme);
 
   const isMobile = width <= 768;
 
