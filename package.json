@@ -5,9 +5,7 @@
   "type": "module",
   "homepage": "https://fernan-x.github.io/mac-portfolio",
   "dependencies": {
-    "@apollo/client": "^3.6.5",
     "@lottiefiles/react-lottie-player": "^3.4.4",
-    "graphql": "^16.5.0",
     "i18next": "^21.6.14",
     "moment": "^2.29.1",
     "react": "^17.0.2",
