@@ -1,3 +1,5 @@
+import { pokemonListSchema } from "../schemas/pokemon";
+
 const GRAPHQL_URL = "https://beta.pokeapi.co/graphql/v1beta";
 
 const POKEMON_LIST_QUERY = `
@@ -34,5 +36,9 @@ export const fetchPokemons = async () => {
   if (errors && errors.length) {
     throw new Error(errors.map((e) => e.message).join(", "));
   }
-  return data.pokemon_v2_pokemon;
+  const result = pokemonListSchema.safeParse(data?.pokemon_v2_pokemon);
+  if (!result.success) {
+    throw new Error(`Invalid PokeAPI response: ${result.error.message}`);
+  }
+  return result.data;
 };
