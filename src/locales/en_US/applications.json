@@ -57,5 +57,13 @@
   "pokemon-about": "About",
   "pokemon-weight": "Weight",
   "pokemon-height": "Height",
-  "pokemon-moves": "Moves"
+  "pokemon-moves": "Moves",
+  "pokemon-abilities": "Abilities",
+  "pokemon-base-stats": "Base Stats",
+  "pokemon-loading": "Loading",
+  "pokemon-error": "Could not load Pokémon. Check your connection and try again.",
+  "pokemon-retry": "Retry",
+  "pokemon-back": "Back",
+  "pokemon-previous": "Previous Pokémon",
+  "pokemon-next": "Next Pokémon"
 }
