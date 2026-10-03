@@ -1,9 +1,6 @@
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql,
 } from "@apollo/client";
 
 const GraphQLClient = new ApolloClient({

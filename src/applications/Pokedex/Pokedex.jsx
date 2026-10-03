@@ -52,7 +52,7 @@ const Pokedex = () => {
         console.error(err);
         setLoading(false);
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
