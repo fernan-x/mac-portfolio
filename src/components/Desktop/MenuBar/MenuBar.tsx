@@ -7,7 +7,7 @@ import { useOnboardingStore } from "../../../store/onboardingStore";
 import "./MenuBar.scss";
 
 import images from "../../../constants/images";
-import moment from "moment";
+import { formatMenuBarDate } from "../../../utils/date";
 import MenuPanel from "../MenuPanel/MenuPanel";
 
 interface MenuBarProps {
@@ -21,13 +21,12 @@ const MenuBar = ({ openApplication }: MenuBarProps) => {
   const [panelOpen, setPanelOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
   const [date, setDate] = useState<string | null>(null);
-  const dateFormat = "ddd D MMMM h:mm a";
 
   useEffect(() => {
-    setDate(moment().format(dateFormat));
+    setDate(formatMenuBarDate());
 
     const interval = setInterval(() => {
-      setDate(moment().format(dateFormat));
+      setDate(formatMenuBarDate());
     }, 1000);
     return () => clearInterval(interval);
   }, []);

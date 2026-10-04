@@ -9,7 +9,6 @@
     "@tanstack/react-hotkeys": "^0.13.0",
     "framer-motion": "^14.0.0",
     "i18next": "^26.4.2",
-    "moment": "^2.29.1",
     "react": "^19.0.0",
     "react-click-away-listener": "^2.1.0",
     "react-dom": "^19.0.0",
