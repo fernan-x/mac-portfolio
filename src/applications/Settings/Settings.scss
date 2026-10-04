@@ -8,6 +8,25 @@
   min-height: 100%;
 }
 
+.setting__button {
+  padding: 3px 14px;
+  border: 0.5px solid colors.$color-light-quartinerary;
+  border-radius: 5px;
+  background: #fff;
+  color: colors.$color-light-primary;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid colors.$color-light-blue;
+  }
+
+  .dark & {
+    background: #3a3a3c;
+    color: colors.$color-dark-primary;
+    border-color: colors.$color-dark-quartinerary;
+  }
+}
+
 .setting__section {
   display: flex;
   width: 100%;

@@ -44,6 +44,25 @@
   padding: 0.8rem;
 }
 
+.lockscreen__content-tour {
+  display: block;
+  margin: 0.8rem auto 0;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+  }
+}
+
 .lockscreen__footer {
   flex: 1;
   width: 100%;
