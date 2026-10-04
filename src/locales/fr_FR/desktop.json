@@ -16,5 +16,7 @@
   "menubar-view": "Affichage",
   "menubar-window": "Fenêtre",
   "menubar-help": "Aide",
-  "menubar-go": "Aller"
+  "menubar-go": "Aller",
+  "launchpad-title": "Launchpad",
+  "launchpad-search": "Rechercher"
 }
