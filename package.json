@@ -6,6 +6,7 @@
   "homepage": "https://fernan-x.github.io/mac-portfolio",
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.4",
+    "framer-motion": "^14.0.0",
     "i18next": "^26.4.2",
     "moment": "^2.29.1",
     "react": "^19.0.0",

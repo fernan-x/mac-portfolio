@@ -1,0 +1,71 @@
+{
+  "ariaLabel": "Welcome tour",
+  "welcome": "Welcome",
+  "skip": "Skip",
+  "continue": "Continue",
+  "back": "Back",
+  "getStarted": "Get started",
+  "page": "Page {{current}} of {{total}}",
+  "menuEntry": "Welcome Tour",
+  "settingsLabel": "Welcome tour",
+  "settingsButton": "Replay",
+  "demoLabel": "Animation: a window is dragged across the screen while a Dock icon bounces",
+  "steps": {
+    "concept": {
+      "title": "Welcome to my Mac",
+      "features": {
+        "mac": {
+          "title": "A portfolio that is a computer",
+          "description": "Hi, I'm Fabien, a developer. This whole website is a Mac."
+        },
+        "apps": {
+          "title": "Every section is an app",
+          "description": "My work, my projects and my story each live in their own app."
+        },
+        "explore": {
+          "title": "Click around",
+          "description": "There is no wrong way to explore. Just open things."
+        }
+      }
+    },
+    "portfolio": {
+      "title": "What you will find",
+      "features": {
+        "about": {
+          "title": "About",
+          "description": "Who I am, what I build and what I care about."
+        },
+        "pokedex": {
+          "title": "Pokedex",
+          "description": "A small project to show how I build interfaces."
+        },
+        "notion": {
+          "title": "Notion",
+          "description": "My experience, education and projects, in one place."
+        }
+      }
+    },
+    "usage": {
+      "title": "How to use it",
+      "features": {
+        "dock": {
+          "title": "Open apps from the Dock",
+          "description": "Click an icon at the bottom of the screen to open it.",
+          "title_mobile": "Swipe to explore",
+          "description_mobile": "Swipe between pages and tap what looks interesting."
+        },
+        "windows": {
+          "title": "Move and resize windows",
+          "description": "Drag a window by its title bar, pull its edges to resize it.",
+          "title_mobile": "Best on a computer",
+          "description_mobile": "The phone version is a preview. The full Mac experience is on desktop."
+        },
+        "settings": {
+          "title": "Make it yours",
+          "description": "Switch theme, wallpaper or language in Settings.",
+          "description_mobile": "Replay this tour any time from the lock screen."
+        }
+      }
+    }
+  }
+}
