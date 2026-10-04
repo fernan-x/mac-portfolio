@@ -26,7 +26,7 @@ import discord from "../assets/images/applications/discord.png";
 import notion from "../assets/images/applications/notion.png";
 import pokedex from "../assets/images/applications/pokedex.png";
 
-import sWallpaper from "../assets/images/smartphone/wallpaper.png";
+import sWallpaper from "../assets/images/smartphone/wallpaper.jpg";
 import sLock from "../assets/images/smartphone/lock.png";
 import sBattery from "../assets/images/smartphone/battery.png";
 import sCamera from "../assets/images/smartphone/camera.png";
