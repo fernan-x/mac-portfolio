@@ -16,5 +16,7 @@
   "menubar-view": "View",
   "menubar-window": "Window",
   "menubar-help": "Help",
-  "menubar-go": "Go"
+  "menubar-go": "Go",
+  "launchpad-title": "Launchpad",
+  "launchpad-search": "Search"
 }

@@ -1,8 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useHotkey } from "@tanstack/react-hotkeys";
 import { useConfigurationStore } from "./store/configurationStore";
 
 import Dock from "./components/Dock/Dock";
+import Launchpad from "./components/Launchpad/Launchpad";
+import { useLaunchpadStore } from "./store/launchpadStore";
 import MenuBar from "./components/Desktop/MenuBar/MenuBar";
 import Window from "./layouts/Window/Window";
 import type { Application } from "./types/application";
@@ -28,6 +31,20 @@ const DesktopApp = ({
   const colorfulBackground = useConfigurationStore(
     (state) => state.colorfulBackground
   );
+
+  const toggleLaunchpad = useLaunchpadStore((state) => state.toggle);
+  const closeLaunchpad = useLaunchpadStore((state) => state.close);
+
+  useHotkey("Mod+K", toggleLaunchpad);
+
+  const openFromDock = (id: string) => {
+    if (id === "launchpad") {
+      toggleLaunchpad();
+      return;
+    }
+    closeLaunchpad();
+    openApplication(id);
+  };
 
   return (
     <div
@@ -61,7 +78,8 @@ const DesktopApp = ({
             </Window>
           ))}
       </div>
-      <Dock openApplication={openApplication} />
+      <Launchpad openApplication={openApplication} />
+      <Dock openApplication={openFromDock} />
     </div>
   );
 };

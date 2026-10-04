@@ -27,7 +27,7 @@ const applications: Application[] = [
     img: images.launchpad,
     open: false,
     active: false,
-    docked: true, // TODO : modify launchpad working
+    docked: true,
     enableFullscreen: false,
     enableResizing: false,
     height: 400,
@@ -89,7 +89,7 @@ const applications: Application[] = [
     id: "bin",
     name: "Bin",
     component: <Construction />,
-    img: "https://findicons.com/files/icons/569/longhorn_objects/128/trash.png", // TODO : put this icon to local
+    img: images.trash,
     open: false,
     active: false,
     docked: true,

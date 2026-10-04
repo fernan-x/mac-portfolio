@@ -1,0 +1,32 @@
+@use "../../../assets/styles/colors";
+
+.app-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: colors.$color-light-background-inactive;
+  will-change: clip-path;
+
+  // Keep app content clear of the status bar and the home indicator
+  &__content {
+    position: absolute;
+    inset: 44px 0 34px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    color: colors.$color-light-primary;
+    outline: none;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+.dark .app-screen {
+  background: colors.$color-dark-background;
+  color: colors.$color-dark-primary;
+
+  .app-screen__content {
+    color: colors.$color-dark-primary;
+  }
+}

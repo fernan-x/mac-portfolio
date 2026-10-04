@@ -1,8 +1,13 @@
 .lockscreen {
-  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  box-sizing: border-box;
+  padding: 44px 0 34px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  touch-action: none;
 }
 
 .lockscreen__header {
@@ -107,7 +112,12 @@
     justify-content: center;
     align-items: center;
 
-    span {
+    button {
+      padding: 0;
+      border: 0;
+      background: none;
+      font-family: inherit;
+      cursor: pointer;
       font-style: normal;
       font-weight: 400;
       font-size: 17px;
