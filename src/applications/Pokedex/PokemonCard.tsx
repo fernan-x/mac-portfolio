@@ -1,5 +1,3 @@
-import React from "react";
-
 interface PokemonCardProps {
   id: number;
   name: string;
@@ -16,18 +14,22 @@ const PokemonCard = ({
   setDisplayPokemon,
 }: PokemonCardProps) => {
   return (
-    <div
-      className={`pokemon-card type-${types[0]["name"]}`}
+    <button
+      type="button"
+      className={`pokemon-card type-${types[0]?.name ?? "unknown"}`}
       onClick={() => setDisplayPokemon(id)}
+      aria-label={`${name} #${id}`}
     >
-      <div className="pokemon-card__image">
-        <img src={image} alt={name} />
+      <span className="pokemon-card__image">
+        {/* Fixed size: keeps the layout stable before the sprite loads, which
+            the infinite scroll sentinel relies on */}
+        <img src={image} alt="" width={96} height={96} />
         <span className="pokemon-card__image-number">{`#${id
           .toString()
           .padStart(3, "0")}`}</span>
-      </div>
-      <div className="pokemon-card__name">{name}</div>
-    </div>
+      </span>
+      <span className="pokemon-card__name">{name}</span>
+    </button>
   );
 };
 

@@ -57,5 +57,13 @@
   "pokemon-about": "À propos",
   "pokemon-weight": "Poids",
   "pokemon-height": "Taille",
-  "pokemon-moves": "Attaques"
+  "pokemon-moves": "Attaques",
+  "pokemon-abilities": "Talents",
+  "pokemon-base-stats": "Statistiques de base",
+  "pokemon-loading": "Chargement",
+  "pokemon-error": "Impossible de charger les Pokémon. Vérifiez votre connexion et réessayez.",
+  "pokemon-retry": "Réessayer",
+  "pokemon-back": "Retour",
+  "pokemon-previous": "Pokémon précédent",
+  "pokemon-next": "Pokémon suivant"
 }
