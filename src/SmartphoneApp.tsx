@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import moment from "moment";
+import { formatHour, formatLongDate } from "./utils/date";
 import { AnimatePresence, MotionConfig } from "framer-motion";
 import { StatusBar } from "./components/Smartphone";
 import Footer from "./components/Smartphone/Footer/Footer";
@@ -22,13 +22,11 @@ const SmartphoneApp = () => {
   const [launched, setLaunched] = useState<LaunchedApp | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
-  const dateFormat = "dddd, MMMM D";
-  const hourFormat = "h:mm";
 
   useEffect(() => {
     const tick = () => {
-      setDate(moment().format(dateFormat));
-      setHour(moment().format(hourFormat));
+      setDate(formatLongDate());
+      setHour(formatHour());
     };
     tick();
     const interval = setInterval(tick, 1000);
