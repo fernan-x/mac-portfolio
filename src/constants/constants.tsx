@@ -1,10 +1,13 @@
-import About from "../applications/About/About";
-import Construction from "../applications/Construction/Construction";
-import Notion from "../applications/Notion/Notion";
-import Pokedex from "../applications/Pokedex/Pokedex";
-import Settings from "../applications/Settings/Settings";
+import { lazy } from "react";
 import type { Application } from "../types/application";
 import images from "./images";
+
+// Apps are code-split: each chunk (and its assets) loads when the app first opens
+const About = lazy(() => import("../applications/About/About"));
+const Construction = lazy(() => import("../applications/Construction/Construction"));
+const Notion = lazy(() => import("../applications/Notion/Notion"));
+const Pokedex = lazy(() => import("../applications/Pokedex/Pokedex"));
+const Settings = lazy(() => import("../applications/Settings/Settings"));
 
 const applications: Application[] = [
   {

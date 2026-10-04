@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import constants from "../../../constants/constants";
 import "./AppScreen.scss";
@@ -45,7 +45,7 @@ const AppScreen = ({ id, origin }: AppScreenProps) => {
       exit={{ clipPath: closed, opacity: 0 }}
       transition={{ type: "spring", stiffness: 260, damping: 30 }}
     >
-      <div className="app-screen__content" ref={contentRef} tabIndex={-1}>{app.component}</div>
+      <div className="app-screen__content" ref={contentRef} tabIndex={-1}><Suspense fallback={null}>{app.component}</Suspense></div>
     </motion.div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { useHotkey } from "@tanstack/react-hotkeys";
 import { useConfigurationStore } from "./store/configurationStore";
@@ -74,7 +74,7 @@ const DesktopApp = ({
               setActive={setApplicationActive}
               closeApplication={() => closeApplication(item.id)}
             >
-              {item.component}
+              <Suspense fallback={null}>{item.component}</Suspense>
             </Window>
           ))}
       </div>
