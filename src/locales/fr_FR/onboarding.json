@@ -1,0 +1,71 @@
+{
+  "ariaLabel": "Visite de bienvenue",
+  "welcome": "Bienvenue",
+  "skip": "Passer",
+  "continue": "Continuer",
+  "back": "Retour",
+  "getStarted": "Commencer",
+  "page": "Page {{current}} sur {{total}}",
+  "menuEntry": "Visite de bienvenue",
+  "settingsLabel": "Visite de bienvenue",
+  "settingsButton": "Revoir",
+  "demoLabel": "Animation : une fenêtre est déplacée sur l'écran pendant qu'une icône du Dock rebondit",
+  "steps": {
+    "concept": {
+      "title": "Bienvenue sur mon Mac",
+      "features": {
+        "mac": {
+          "title": "Un portfolio qui est un ordinateur",
+          "description": "Salut, moi c'est Fabien, développeur. Tout ce site est un Mac."
+        },
+        "apps": {
+          "title": "Chaque section est une app",
+          "description": "Mon travail, mes projets et mon parcours ont chacun leur application."
+        },
+        "explore": {
+          "title": "Cliquez partout",
+          "description": "Il n'y a pas de mauvaise façon d'explorer. Ouvrez les choses."
+        }
+      }
+    },
+    "portfolio": {
+      "title": "Ce que vous y trouverez",
+      "features": {
+        "about": {
+          "title": "À propos",
+          "description": "Qui je suis, ce que je construis et ce qui m'importe."
+        },
+        "pokedex": {
+          "title": "Pokedex",
+          "description": "Un petit projet pour montrer comment je construis des interfaces."
+        },
+        "notion": {
+          "title": "Notion",
+          "description": "Mon expérience, ma formation et mes projets, au même endroit."
+        }
+      }
+    },
+    "usage": {
+      "title": "Comment l'utiliser",
+      "features": {
+        "dock": {
+          "title": "Ouvrez les apps depuis le Dock",
+          "description": "Cliquez sur une icône en bas de l'écran pour l'ouvrir.",
+          "title_mobile": "Glissez pour explorer",
+          "description_mobile": "Glissez entre les pages et touchez ce qui vous intrigue."
+        },
+        "windows": {
+          "title": "Déplacez et redimensionnez les fenêtres",
+          "description": "Faites glisser une fenêtre par sa barre de titre, tirez sur ses bords pour la redimensionner.",
+          "title_mobile": "Mieux sur ordinateur",
+          "description_mobile": "La version mobile est un aperçu. L'expérience Mac complète est sur ordinateur."
+        },
+        "settings": {
+          "title": "Personnalisez-le",
+          "description": "Changez le thème, le fond d'écran ou la langue dans les Réglages.",
+          "description_mobile": "Revoyez cette visite quand vous voulez depuis l'écran verrouillé."
+        }
+      }
+    }
+  }
+}

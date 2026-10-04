@@ -1,3 +1,49 @@
+/* Help menu (opens the welcome tour) */
+.menu-bar .left {
+  .menus-help {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .menus-button {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0 6px;
+    font-family: inherit;
+    cursor: default;
+    border-radius: 4px;
+
+    &:hover,
+    &.open {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: -2px;
+    }
+  }
+
+  .menu-panel--help {
+    left: 0;
+    top: 30px;
+    width: 190px;
+  }
+}
+
+.menu-panel__entries-button {
+  display: block;
+  width: calc(100% - 0.2em);
+  margin: 0.2em 0.1em;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: default;
+}
+
 /* Menu bar */
 .menu-bar {
   position: sticky;
