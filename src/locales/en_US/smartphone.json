@@ -1,4 +1,7 @@
 {
   "notification-discord-title": "Fabien send a message",
-  "notification-discord-message": "The smartphone experience is under construction. Try the destkop one for now 😉"
+  "notification-discord-message": "The smartphone experience is under construction. Try the destkop one for now 😉",
+  "home-search": "Search",
+  "swipe-to-open": "swipe up to open",
+  "home-indicator": "Home"
 }

@@ -1,4 +1,7 @@
 {
   "notification-discord-title": "Fabien a envoyé un message",
-  "notification-discord-message": "L'expérience mobile est en cours de construction. Essayez l'expérience pc pour le moment 😉"
+  "notification-discord-message": "L'expérience mobile est en cours de construction. Essayez l'expérience pc pour le moment 😉",
+  "home-search": "Rechercher",
+  "swipe-to-open": "balayer vers le haut pour ouvrir",
+  "home-indicator": "Accueil"
 }

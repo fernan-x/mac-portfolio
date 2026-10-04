@@ -1,9 +1,26 @@
 .footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
   width: 100%;
-  height: 30px;
+  height: 34px;
   display: flex;
   justify-content: center;
   align-items: center;
+  touch-action: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+    border-radius: 12px;
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
 }
 
 .footer__slider {
@@ -11,17 +28,21 @@
   height: 5px;
   background: #ffffff;
   border-radius: 100px;
-  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+
+  &--float {
+    animation: float 6s ease-in-out infinite;
+  }
 }
 
 @keyframes float {
   0% {
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translatey(-10px);
+    transform: translateY(-10px);
   }
   100% {
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
 }
