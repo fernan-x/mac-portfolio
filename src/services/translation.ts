@@ -8,6 +8,8 @@ import frApp from "../locales/fr_FR/applications.json";
 import enApp from "../locales/en_US/applications.json";
 import frSmartphone from "../locales/fr_FR/smartphone.json";
 import enSmartphone from "../locales/en_US/smartphone.json";
+import frOnboarding from "../locales/fr_FR/onboarding.json";
+import enOnboarding from "../locales/en_US/onboarding.json";
 
 const resources = {
   en: {
@@ -15,12 +17,14 @@ const resources = {
     desktop: enDesktop,
     app: enApp,
     smartphone: enSmartphone,
+    onboarding: enOnboarding,
   },
   fr: {
     common: frTranslation,
     desktop: frDesktop,
     app: frApp,
     smartphone: frSmartphone,
+    onboarding: frOnboarding,
   },
 };
 

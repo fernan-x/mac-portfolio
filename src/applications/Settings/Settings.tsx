@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { desktopImages } from "../../constants/images";
 import { useConfigurationStore } from "../../store/configurationStore";
+import { useOnboardingStore } from "../../store/onboardingStore";
 import Divider from "../../components/Desktop/Divider/Divider";
 import BigSurSelect from "../../components/Desktop/BigSurSelect/BigSurSelect";
 
@@ -15,6 +16,8 @@ import "./Settings.scss";
 
 const Settings = () => {
   const { t } = useTranslation(["app"]);
+  const { t: tOnboarding } = useTranslation(["onboarding"]);
+  const openOnboarding = useOnboardingStore((state) => state.open);
   const setTheme = useConfigurationStore((state) => state.setTheme);
   const setBackground = useConfigurationStore((state) => state.setBackground);
   const darkTheme = useConfigurationStore((state) => state.darkTheme);
@@ -117,6 +120,20 @@ const Settings = () => {
               <option value="fr">{t("app:about-french")}</option>
               <option value="en">{t("app:about-english")}</option>
             </BigSurSelect>
+          </div>
+        </div>
+        <div className="setting__section-row spaced">
+          <div className="setting__section-row_label text__default">
+            {tOnboarding("onboarding:settingsLabel")} :
+          </div>
+          <div className="setting__section-row_value">
+            <button
+              type="button"
+              className="setting__button text__default"
+              onClick={openOnboarding}
+            >
+              {tOnboarding("onboarding:settingsButton")}
+            </button>
           </div>
         </div>
       </div>

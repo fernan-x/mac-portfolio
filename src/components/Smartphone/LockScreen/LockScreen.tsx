@@ -1,11 +1,14 @@
 import React from "react";
 import { smartphoneImages, appImages } from "../../../constants/images";
 import NotificationCard from "../NotificationCard/NotificationCard";
+import { useOnboardingStore } from "../../../store/onboardingStore";
 import "./LockScreen.scss";
 import { useTranslation } from "react-i18next";
 
 const LockScreen = ({ hour, date }: { hour: string; date: string }) => {
   const { t } = useTranslation(["smartphone"]);
+  const { t: tOnboarding } = useTranslation(["onboarding"]);
+  const openOnboarding = useOnboardingStore((state) => state.open);
 
   return (
     <div className="lockscreen">
@@ -27,6 +30,13 @@ const LockScreen = ({ hour, date }: { hour: string; date: string }) => {
             desc={t("smartphone:notification-discord-message")}
             date="now"
           />
+          <button
+            type="button"
+            className="lockscreen__content-tour"
+            onClick={openOnboarding}
+          >
+            {tOnboarding("onboarding:menuEntry")}
+          </button>
         </div>
       </div>
       <div className="lockscreen__footer">

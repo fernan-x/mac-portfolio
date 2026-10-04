@@ -1,13 +1,21 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import type { Application } from "./types/application";
 import { useConfigurationStore } from "./store/configurationStore";
+import { useOnboardingStore } from "./store/onboardingStore";
 
 import constants from "./constants/constants";
 import SmartphoneApp from "./SmartphoneApp";
 import DesktopApp from "./DesktopApp";
 
+// Loaded on demand: not part of the main chunk until the onboarding is shown
+const Onboarding = lazy(() => import("./components/Onboarding/Onboarding"));
+
 function App() {
   const defaultZ = 2;
+  const onboardingOpen = useOnboardingStore((state) => state.isOpen);
+  // Stay mounted once opened so the exit animation can play
+  const [onboardingMounted, setOnboardingMounted] = useState(onboardingOpen);
+  if (onboardingOpen && !onboardingMounted) setOnboardingMounted(true);
 
   const [width, setWidth] = useState(window.innerWidth);
   const [openedApp, setOpenedApp] = useState<Application[] | null>(null);
@@ -159,6 +167,11 @@ function App() {
           maxZ={maxZ}
           setApplicationActive={setApplicationActive}
         />
+      )}
+      {onboardingMounted && (
+        <Suspense fallback={null}>
+          <Onboarding variant={isMobile ? "smartphone" : "desktop"} />
+        </Suspense>
       )}
     </div>
   );
