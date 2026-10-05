@@ -1,11 +1,12 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { useConfigurationStore } from "./configurationStore";
+import { useConfigurationStore, MIN_BRIGHTNESS } from "./configurationStore";
 
 describe("configurationStore", () => {
   beforeEach(() => {
     useConfigurationStore.setState({
       darkTheme: true,
       colorfulBackground: true,
+      brightness: 1,
     });
   });
 
@@ -30,5 +31,15 @@ describe("configurationStore", () => {
     expect(useConfigurationStore.getState().colorfulBackground).toBe(false);
     setBackground("colorful");
     expect(useConfigurationStore.getState().colorfulBackground).toBe(true);
+  });
+
+  it("clamps the brightness", () => {
+    const { setBrightness } = useConfigurationStore.getState();
+    setBrightness(0.6);
+    expect(useConfigurationStore.getState().brightness).toBe(0.6);
+    setBrightness(5);
+    expect(useConfigurationStore.getState().brightness).toBe(1);
+    setBrightness(0);
+    expect(useConfigurationStore.getState().brightness).toBe(MIN_BRIGHTNESS);
   });
 });

@@ -18,5 +18,13 @@
   "menubar-help": "Aide",
   "menubar-go": "Aller",
   "launchpad-title": "Launchpad",
-  "launchpad-search": "Rechercher"
+  "launchpad-search": "Rechercher",
+  "controlcenter-title": "Centre de contrôle",
+  "controlcenter-dark": "Mode sombre",
+  "controlcenter-display": "Luminosité",
+  "controlcenter-language": "Langue",
+  "controlcenter-english": "Anglais",
+  "controlcenter-french": "Français",
+  "controlcenter-on": "Activé",
+  "controlcenter-off": "Désactivé"
 }

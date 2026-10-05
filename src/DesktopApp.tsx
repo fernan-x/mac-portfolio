@@ -32,6 +32,8 @@ const DesktopApp = ({
     (state) => state.colorfulBackground
   );
 
+  const brightness = useConfigurationStore((state) => state.brightness);
+
   const toggleLaunchpad = useLaunchpadStore((state) => state.toggle);
   const closeLaunchpad = useLaunchpadStore((state) => state.close);
 
@@ -80,6 +82,11 @@ const DesktopApp = ({
       </div>
       <Launchpad openApplication={openApplication} />
       <Dock openApplication={openFromDock} />
+      <div
+        className="brightness-overlay"
+        style={{ opacity: 1 - brightness }}
+        aria-hidden="true"
+      />
     </div>
   );
 };
