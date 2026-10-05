@@ -4,6 +4,8 @@ import {
   FiGrid,
   FiMove,
   FiSliders,
+  FiSun,
+  FiGlobe,
   FiUser,
   FiMousePointer,
 } from "react-icons/fi";
@@ -28,8 +30,8 @@ export interface OnboardingFeature {
 export interface OnboardingStep {
   id: string;
   features: OnboardingFeature[];
-  /** Show the looping mini animation (desktop only) */
-  demo?: boolean;
+  /** Looping mini animation shown above the step (desktop only) */
+  demo?: "portfolio" | "usage" | "customize";
 }
 
 export const onboardingSteps: OnboardingStep[] = [
@@ -46,6 +48,7 @@ export const onboardingSteps: OnboardingStep[] = [
   },
   {
     id: "portfolio",
+    demo: "portfolio",
     features: [
       { id: "about", icon: { kind: "glyph", Icon: FiUser, color: "#af52de" } },
       { id: "pokedex", icon: { kind: "image", src: appImages.pokedex } },
@@ -54,10 +57,18 @@ export const onboardingSteps: OnboardingStep[] = [
   },
   {
     id: "usage",
-    demo: true,
+    demo: "usage",
     features: [
       { id: "dock", icon: { kind: "glyph", Icon: FiGrid, color: "#007aff" } },
       { id: "windows", icon: { kind: "glyph", Icon: FiMove, color: "#ff9500" } },
+    ],
+  },
+  {
+    id: "customize",
+    demo: "customize",
+    features: [
+      { id: "theme", icon: { kind: "glyph", Icon: FiSun, color: "#ff9500" } },
+      { id: "language", icon: { kind: "glyph", Icon: FiGlobe, color: "#5856d6" } },
       {
         id: "settings",
         icon: { kind: "glyph", Icon: FiSliders, color: "#8e8e93" },

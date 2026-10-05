@@ -1,5 +1,6 @@
 {
   "ariaLabel": "Visite de bienvenue",
+  "whatsNew": "Nouveautés",
   "welcome": "Bienvenue",
   "skip": "Passer",
   "continue": "Continuer",
@@ -9,6 +10,7 @@
   "menuEntry": "Visite de bienvenue",
   "settingsLabel": "Visite de bienvenue",
   "settingsButton": "Revoir",
+  "portfolioDemoLabel": "Animation : des fenêtres d'applications s'ouvrent les unes après les autres sur le bureau",
   "demoLabel": "Animation : une fenêtre est déplacée sur l'écran pendant qu'une icône du Dock rebondit",
   "steps": {
     "concept": {
@@ -51,21 +53,35 @@
         "dock": {
           "title": "Ouvrez les apps depuis le Dock",
           "description": "Cliquez sur une icône en bas de l'écran pour l'ouvrir.",
-          "title_mobile": "Glissez pour explorer",
-          "description_mobile": "Glissez entre les pages et touchez ce qui vous intrigue."
+          "title_mobile": "Utilisez-le comme un iPhone",
+          "description_mobile": "Balayez entre les écrans d'accueil et touchez une app pour l'ouvrir."
         },
         "windows": {
           "title": "Déplacez et redimensionnez les fenêtres",
           "description": "Faites glisser une fenêtre par sa barre de titre, tirez sur ses bords pour la redimensionner.",
           "title_mobile": "Mieux sur ordinateur",
-          "description_mobile": "La version mobile est un aperçu. L'expérience Mac complète est sur ordinateur."
+          "description_mobile": "Cette vue iPhone est un aperçu. L'expérience Mac complète est sur ordinateur."
+        }
+      }
+    },
+    "customize": {
+      "title": "Personnalisez-le",
+      "features": {
+        "theme": {
+          "title": "Clair ou sombre",
+          "description": "Changez le thème selon votre humeur."
+        },
+        "language": {
+          "title": "Français ou anglais",
+          "description": "Changez la langue de tout le site."
         },
         "settings": {
-          "title": "Personnalisez-le",
-          "description": "Changez le thème, le fond d'écran ou la langue dans les Réglages.",
-          "description_mobile": "Revoyez cette visite quand vous voulez depuis l'écran verrouillé."
+          "title": "Tout est dans les Réglages",
+          "description": "Thème, fond d'écran et langue se règlent dans l'app Réglages.",
+          "description_mobile": "Rejouez ce tour à tout moment depuis l'écran verrouillé."
         }
       }
     }
-  }
+  },
+  "customizeDemoLabel": "Animation : les Réglages s'ouvrent, le thème passe en sombre et la langue change"
 }

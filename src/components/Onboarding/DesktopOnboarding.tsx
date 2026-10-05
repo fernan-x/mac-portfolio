@@ -2,9 +2,12 @@ import { useRef } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useOnboardingStore } from "../../store/onboardingStore";
-import { onboardingSteps } from "../../onboarding/steps";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { onboardingSteps, TOTAL_STEPS } from "../../onboarding/steps";
 import HelloIntro from "./HelloIntro";
 import StepContent from "./StepContent";
+import CustomizeDemo from "./CustomizeDemo";
+import PortfolioDemo from "./PortfolioDemo";
 import UsageDemo from "./UsageDemo";
 import { useFocusTrap } from "./useFocusTrap";
 import { useOnboardingKeys } from "./useOnboardingKeys";
@@ -42,7 +45,7 @@ const DesktopOnboarding = () => {
       <AnimatePresence mode="wait">
         {content ? (
           <motion.section
-            key={content.id}
+            key="window"
             className="onboarding-window"
             aria-labelledby={TITLE_ID}
             initial={
@@ -54,27 +57,65 @@ const DesktopOnboarding = () => {
             }
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <StepContent step={content} variant="desktop" titleId={TITLE_ID} />
-            {content.demo && <UsageDemo />}
-            <div className="onboarding-window__footer">
-              {step > 1 && (
-                <button
-                  type="button"
-                  className="onboarding-button onboarding-button--text"
-                  onClick={prev}
-                >
-                  {t("back")}
-                </button>
-              )}
+            <header className="onboarding-window__titlebar">
               <button
                 type="button"
-                className="onboarding-button onboarding-button--primary"
-                onClick={next}
-                autoFocus
+                className="onboarding-window__close"
+                onClick={close}
+                aria-label={t("skip")}
+              />
+              <i aria-hidden="true" />
+              <i aria-hidden="true" />
+              <span className="onboarding-window__name">{t("whatsNew")}</span>
+            </header>
+            {/* Only the content swaps between pages, the window stays put */}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={content.id}
+                className="onboarding-window__body"
+                initial={reducedMotion ? { opacity: 0 } : { opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={reducedMotion ? { opacity: 0 } : { opacity: 0, x: -24 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
               >
-                {t("continue")}
+                {content.demo === "usage" ? (
+                  <UsageDemo />
+                ) : content.demo === "portfolio" ? (
+                  <PortfolioDemo />
+                ) : content.demo === "customize" ? (
+                  <CustomizeDemo />
+                ) : (
+                  <div className="onboarding-emblem" aria-hidden="true" />
+                )}
+                <StepContent
+                  step={content}
+                  variant="desktop"
+                  titleId={TITLE_ID}
+                />
+              </motion.div>
+            </AnimatePresence>
+            {step > 1 && (
+              <button
+                type="button"
+                className="onboarding-chevron onboarding-chevron--prev"
+                onClick={prev}
+                aria-label={t("back")}
+              >
+                <FiChevronLeft aria-hidden="true" />
               </button>
-            </div>
+            )}
+            <button
+              type="button"
+              className="onboarding-chevron onboarding-chevron--next"
+              onClick={next}
+              aria-label={t("continue")}
+              autoFocus
+            >
+              <FiChevronRight aria-hidden="true" />
+            </button>
+            <p className="onboarding-window__counter">
+              {t("page", { current: step, total: TOTAL_STEPS - 1 })}
+            </p>
           </motion.section>
         ) : (
           <motion.div
