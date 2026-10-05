@@ -1,5 +1,6 @@
 {
   "ariaLabel": "Welcome tour",
+  "whatsNew": "What's New",
   "welcome": "Welcome",
   "skip": "Skip",
   "continue": "Continue",
@@ -9,6 +10,7 @@
   "menuEntry": "Welcome Tour",
   "settingsLabel": "Welcome tour",
   "settingsButton": "Replay",
+  "portfolioDemoLabel": "Animation: app windows open one after the other on the desktop",
   "demoLabel": "Animation: a window is dragged across the screen while a Dock icon bounces",
   "steps": {
     "concept": {
@@ -51,21 +53,35 @@
         "dock": {
           "title": "Open apps from the Dock",
           "description": "Click an icon at the bottom of the screen to open it.",
-          "title_mobile": "Swipe to explore",
-          "description_mobile": "Swipe between pages and tap what looks interesting."
+          "title_mobile": "Use it like an iPhone",
+          "description_mobile": "Swipe between home screens and tap an app to open it."
         },
         "windows": {
           "title": "Move and resize windows",
           "description": "Drag a window by its title bar, pull its edges to resize it.",
           "title_mobile": "Best on a computer",
-          "description_mobile": "The phone version is a preview. The full Mac experience is on desktop."
+          "description_mobile": "This iPhone view is a preview. The full Mac experience is on desktop."
+        }
+      }
+    },
+    "customize": {
+      "title": "Make it yours",
+      "features": {
+        "theme": {
+          "title": "Light or dark",
+          "description": "Switch the theme to match your mood."
+        },
+        "language": {
+          "title": "English or French",
+          "description": "Switch the language of the whole site."
         },
         "settings": {
-          "title": "Make it yours",
-          "description": "Switch theme, wallpaper or language in Settings.",
+          "title": "Everything is in Settings",
+          "description": "Theme, wallpaper and language live in the Settings app.",
           "description_mobile": "Replay this tour any time from the lock screen."
         }
       }
     }
-  }
+  },
+  "customizeDemoLabel": "Animation: Settings opens, the theme switches to dark and the language changes"
 }

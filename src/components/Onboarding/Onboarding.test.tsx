@@ -110,7 +110,8 @@ describe("Onboarding (smartphone)", () => {
 
     await user.click(screen.getByRole("button", { name: "Continue" }));
     await user.click(screen.getByRole("button", { name: "Continue" }));
-    await screen.findByRole("heading", { name: "How to use it" });
+    await user.click(screen.getByRole("button", { name: "Continue" }));
+    await screen.findByRole("heading", { name: "Make it yours" });
     expect(screen.queryByRole("button", { name: "Skip" })).toBeNull();
 
     await user.click(screen.getByRole("button", { name: "Get started" }));
