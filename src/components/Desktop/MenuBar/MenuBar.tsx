@@ -9,6 +9,7 @@ import "./MenuBar.scss";
 import images from "../../../constants/images";
 import { formatMenuBarDate } from "../../../utils/date";
 import MenuPanel from "../MenuPanel/MenuPanel";
+import ControlCenter from "../ControlCenter/ControlCenter";
 
 interface MenuBarProps {
   openApplication: (id: string) => void;
@@ -93,9 +94,7 @@ const MenuBar = ({ openApplication }: MenuBarProps) => {
         <div className="menu-ico battery">
           <img src={images.battery} alt="Battery" />
         </div>
-        <div className="menu-ico">
-          <img src={images.controlcenter} alt="Control center" />
-        </div>
+        <ControlCenter />
         <div className="menu-ico">
           <img src={images.search} alt="Search" />
         </div>

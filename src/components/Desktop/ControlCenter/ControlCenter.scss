@@ -1,0 +1,184 @@
+@use "../../../assets/styles/colors";
+
+$glass: rgba(255, 255, 255, 0.14);
+$glass-border: rgba(255, 255, 255, 0.28);
+
+.control-center {
+  position: relative;
+  height: 100%;
+
+  &__trigger {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    width: 30px;
+    cursor: default;
+  }
+
+  &__panel {
+    position: absolute;
+    top: 36px;
+    right: -8px;
+    width: 320px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    z-index: 9000;
+    background: rgba(60, 60, 70, 0.45);
+    border: 1px solid $glass-border;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border-radius: 26px;
+    font-family: "SF Pro Text", "San Francisco", sans-serif;
+    color: #fff;
+  }
+
+  &__tile {
+    appearance: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    min-height: 130px;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    cursor: default;
+    background: $glass;
+    border: 1px solid $glass-border;
+    border-radius: 24px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: background 0.2s, box-shadow 0.2s;
+
+    &.on {
+      background: rgba(10, 90, 255, 0.35);
+      box-shadow: inset 0 0 18px rgba(80, 120, 255, 0.6);
+    }
+
+    &--wide {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 0;
+      padding: 8px 14px 8px 8px;
+      border-radius: 28px;
+    }
+
+    &--slider {
+      grid-column: 1 / -1;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 8px;
+      min-height: 0;
+      padding: 12px 16px;
+    }
+
+    &:focus-within:not(:hover) {
+      outline: 2px solid rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &__icon {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    color: colors.$color-light-blue;
+    font-size: 20px;
+
+    .on & {
+      background: #fff;
+    }
+
+    :not(.on) > & {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  &__select {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: default;
+  }
+
+  &__slider-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__slider {
+    --fill: 100%;
+    flex: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(
+      to right,
+      #fff var(--fill),
+      rgba(255, 255, 255, 0.25) var(--fill)
+    );
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    &::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.brightness-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  pointer-events: none;
+  z-index: 99999;
+}
